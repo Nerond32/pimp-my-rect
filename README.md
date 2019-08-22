@@ -1,23 +1,68 @@
-## Pimp my rect ( ͡° ͜ʖ ͡°)
-_a simple JS app for xfive.co_
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is a specification for a Xfive test JavaScript project. Use any technology of your preference. It’s perfectly OK to use vanilla JS or any front-end frameworks or libraries.
+## Available Scripts
 
-Here’s what it should look like:
+In the project directory, you can run:
 
-* The app should consist of 3 parts/sections: **Editor**, **Output**, **Gallery**. Editor should live-update the Output. It’s up to you if you show Gallery on the same page or under e.g. localhost:xxxx/gallery. What’s crucial: the gallery’s state persists after the browser restarts. To obtain this goal, you’re allowed to use any technology you feel comfortable with (i.e. WS + IndexedDB, Firebase, Node+MongoDB, LocalStorage).
-* **Output**: simple rectangular `<div>`
-* **Editor**: it should have a set of inputs to adjust Output’s:
-  * background colour (colour picker)
-  * size (input which you think is the most suitable here)
-  * border radius (please use a range picker)
-  * A save button
-* **Gallery**: a list of saved Output divs with preserved styling. It should be possible to:
-  * remove Outputs from the list
-  * [optional but very welcome] some animations or sorting/filtering options
-* It should work well in the newest browsers (mobile Chrome and Safari included!).
-* All third party dependencies (if there will be any) should be installed using either NPM or Bower.
-* The whole thing should be split into modules (preferably with CommonJS or ES6 syntax but AMD is also fine).
-* The layout is up to you! Feel free to use tools such as http://getbootstrap.com/ or https://www.muicss.com/. In case you’d like to roll your own CSS you’re more than welcome to do so.
+### `npm start`
 
-**Project deadline**: Take your time but try to deliver it within 2 weeks time. If we don't see any activity in your test repository after 2 weeks (at least initial commits), we will automatically withdraw your application.
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
