@@ -1,0 +1,25 @@
+@import '../../assets/variables.scss';
+
+header {
+    background-color:lighten($background,10%);
+    box-shadow: 5px 5px 5px $accent;
+    font-size:1rem;
+    padding:0.5em;
+    width:14em;
+    .header-text {
+        margin: 0 auto;
+        width: 10em; 
+        h1 {
+            font-size: 1.2rem;
+            font-weight:600;
+            margin:2px;
+        }
+        h2 {
+            color:$foregroundLight;
+            font-size: 0.7rem;
+            margin:2px;
+            font-weight:400;
+            text-align:right;
+        }
+    }
+}
