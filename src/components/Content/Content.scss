@@ -23,3 +23,15 @@
       grid-area:gallery;
     }
 }
+
+@media only screen and (max-width: 600px) {
+  .content {
+    grid:1fr 1em 1fr 1em 2fr / 1fr;
+    grid-template-areas:
+        "editor"
+        "."
+        "output"
+        "."
+        "gallery";
+  }
+}
