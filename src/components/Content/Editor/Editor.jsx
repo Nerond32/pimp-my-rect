@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import RangeInput from 'components/generic/RangeInput/RangeInput';
 import './Editor.scss';
 
 const Editor = ({
@@ -29,31 +30,23 @@ const Editor = ({
           onChange={event => changeColor(event.target.value)}
         />
       </label>
-      <label htmlFor="rectSize">
-        Size
-        <input
-          type="range"
-          id="rectSize"
-          name="rectSize"
-          min="100"
-          max="400"
-          step="10"
-          value={size}
-          onChange={event => changeSize(Number(event.target.value))}
-        />
-      </label>
-      <label htmlFor="rectBorder">
-        Border size
-        <input
-          type="range"
-          id="rectBorder"
-          name="rectBorder"
-          min="0"
-          max="20"
-          value={borderSize}
-          onChange={event => changeBorderSize(Number(event.target.value))}
-        />
-      </label>
+      <RangeInput
+        min={100}
+        max={400}
+        step={10}
+        displayName="Size"
+        name="rectSize"
+        value={size}
+        onChangeHandler={changeSize}
+      />
+      <RangeInput
+        min={1}
+        max={20}
+        displayName="Border size"
+        name="rectBorder"
+        value={borderSize}
+        onChangeHandler={changeBorderSize}
+      />
       <button type="submit">Save</button>
     </form>
   );

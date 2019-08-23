@@ -1,7 +1,9 @@
+@import '../../assets/variables.scss';
+
 .content {
     display:grid;
     flex:1;
-    grid:1fr 1em 2fr / 1fr 1em 2fr;
+    grid:1fr 1em 2fr / 1fr 1em 1fr;
     grid-template-areas:
       "editor . output"
       ". . ."
@@ -13,6 +15,8 @@
     }
     .output {
       grid-area:output;
+      min-height:$rectMaxSize;
+      min-width:$rectMaxSize;
     }
     .gallery {
       grid-area:gallery;

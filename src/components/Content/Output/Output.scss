@@ -1,9 +1,7 @@
 .output {
     position: relative;
-    .rectangle {
-        width:10em;
-        height:10em;
-        position: absolute;
+    .rect-container {
+        position: relative;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

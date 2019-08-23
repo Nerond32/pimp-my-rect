@@ -9,7 +9,11 @@ const Rectangle = ({ borderSize, color, size }) => {
     height: `${size}px`,
     width: `${size}px`
   };
-  return <div className="rectangle" style={rectStyle} />;
+  return (
+    <div className="rect-container">
+      <div className="rectangle" style={rectStyle} />
+    </div>
+  );
 };
 
 Rectangle.propTypes = {

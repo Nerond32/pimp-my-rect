@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Rectangle from 'components/generic/Rectangle/Rectangle';
+import './Gallery.scss';
 
 const Gallery = ({ images }) => {
   return (
