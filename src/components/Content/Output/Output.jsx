@@ -3,10 +3,15 @@ import PropTypes from 'prop-types';
 import Rectangle from 'components/generic/Rectangle/Rectangle';
 import './Output.scss';
 
-const Output = ({ borderSize, color, size }) => {
+const Output = ({ borderSize, color, height, width }) => {
   return (
     <div className="output">
-      <Rectangle borderSize={borderSize} color={color} size={size} />
+      <Rectangle
+        borderSize={borderSize}
+        color={color}
+        height={height}
+        width={width}
+      />
     </div>
   );
 };
@@ -14,7 +19,8 @@ const Output = ({ borderSize, color, size }) => {
 Output.propTypes = {
   borderSize: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
-  size: PropTypes.number.isRequired
+  height: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired
 };
 
 export default Output;

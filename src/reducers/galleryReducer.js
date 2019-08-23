@@ -7,10 +7,11 @@ const initialState = {
 
 const galleryReducer = (state = initialState, action) => {
   if (action.type === ADD_IMAGE) {
-    const { borderSize, color, size } = action;
+    const { borderSize, color, height, width } = action;
+    console.log(action);
     const id = generateUniqueHash();
     return {
-      images: [...state.images, { id, borderSize, color, size }]
+      images: [...state.images, { id, borderSize, color, height, width }]
     };
   }
   if (action.type === DELETE_IMAGE) {

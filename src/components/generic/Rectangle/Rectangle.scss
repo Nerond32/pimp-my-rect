@@ -3,6 +3,7 @@
 .rect-container {
     height:$rectMaxSize;
     width:$rectMaxSize;
+    margin: 0.5em;
     position: relative;
     .rectangle {
         width:10em;

@@ -1,13 +1,15 @@
 import {
   CHANGE_BORDER_SIZE,
   CHANGE_COLOR,
-  CHANGE_SIZE
+  CHANGE_HEIGHT,
+  CHANGE_WIDTH
 } from 'actions/rectActions';
 
 const initialState = {
   borderSize: 5,
   color: '#ff0000',
-  size: 200
+  height: 200,
+  width: 200
 };
 
 const appReducer = (state = initialState, action) => {
@@ -25,11 +27,18 @@ const appReducer = (state = initialState, action) => {
       color
     };
   }
-  if (action.type === CHANGE_SIZE) {
-    const { size } = action;
+  if (action.type === CHANGE_HEIGHT) {
+    const { height } = action;
     return {
       ...state,
-      size
+      height
+    };
+  }
+  if (action.type === CHANGE_WIDTH) {
+    const { width } = action;
+    return {
+      ...state,
+      width
     };
   }
   return state;

@@ -6,18 +6,21 @@ import './Editor.scss';
 const Editor = ({
   borderSize,
   color,
-  size,
+  height,
+  width,
   addImage,
   changeBorderSize,
   changeColor,
-  changeSize
+  changeHeight,
+  changeWidth
 }) => {
   return (
     <form
       className="editor"
       onSubmit={event => {
         event.preventDefault();
-        addImage(borderSize, color, size);
+        console.log(width);
+        addImage(borderSize, color, height, width);
       }}
     >
       <label htmlFor="rectColor">
@@ -31,13 +34,22 @@ const Editor = ({
         />
       </label>
       <RangeInput
-        min={100}
-        max={400}
-        step={10}
-        displayName="Size"
-        name="rectSize"
-        value={size}
-        onChangeHandler={changeSize}
+        min={10}
+        max={250}
+        step={5}
+        displayName="Height"
+        name="rectHeight"
+        value={height}
+        onChangeHandler={changeHeight}
+      />
+      <RangeInput
+        min={10}
+        max={250}
+        step={5}
+        displayName="Width"
+        name="rectWidth"
+        value={width}
+        onChangeHandler={changeWidth}
       />
       <RangeInput
         min={1}
@@ -55,11 +67,13 @@ const Editor = ({
 Editor.propTypes = {
   borderSize: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
-  size: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
   addImage: PropTypes.func.isRequired,
   changeBorderSize: PropTypes.func.isRequired,
   changeColor: PropTypes.func.isRequired,
-  changeSize: PropTypes.func.isRequired
+  changeHeight: PropTypes.func.isRequired,
+  changeWidth: PropTypes.func.isRequired
 };
 
 export default memo(Editor);

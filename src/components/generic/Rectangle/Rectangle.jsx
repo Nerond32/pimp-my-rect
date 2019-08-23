@@ -2,12 +2,12 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import './Rectangle.scss';
 
-const Rectangle = ({ borderSize, color, size }) => {
+const Rectangle = ({ borderSize, color, height, width }) => {
   const rectStyle = {
     border: `solid black ${borderSize}px`,
     backgroundColor: `${color}`,
-    height: `${size}px`,
-    width: `${size}px`
+    height: `${height}px`,
+    width: `${width}px`
   };
   return (
     <div className="rect-container">
@@ -19,7 +19,8 @@ const Rectangle = ({ borderSize, color, size }) => {
 Rectangle.propTypes = {
   borderSize: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
-  size: PropTypes.number.isRequired
+  height: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired
 };
 
 export default memo(Rectangle);

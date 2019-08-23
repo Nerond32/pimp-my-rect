@@ -4,18 +4,20 @@ import Rectangle from 'components/generic/Rectangle/Rectangle';
 import './Gallery.scss';
 
 const Gallery = ({ images }) => {
+  console.log(images);
   return (
     <div className="gallery">
       <h2>Your saved pimp&apos;d rects</h2>
       <div className="image-container">
         {images.map(image => {
-          const { id, borderSize, color, size } = image;
+          const { id, borderSize, color, height, width } = image;
           return (
             <Rectangle
               key={id}
               borderSize={borderSize}
               color={color}
-              size={size}
+              height={height}
+              width={width}
             />
           );
         })}
@@ -30,7 +32,8 @@ Gallery.propTypes = {
       id: PropTypes.string.isRequired,
       borderSize: PropTypes.number.isRequired,
       color: PropTypes.string.isRequired,
-      size: PropTypes.number.isRequired
+      height: PropTypes.number.isRequired,
+      width: PropTypes.number.isRequired
     })
   ).isRequired
 };
