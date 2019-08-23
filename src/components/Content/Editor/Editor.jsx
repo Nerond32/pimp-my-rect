@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import Button from 'components/generic/Button/Button';
 import RangeInput from 'components/generic/RangeInput/RangeInput';
 import './Editor.scss';
 
@@ -59,7 +60,7 @@ const Editor = ({
         value={borderSize}
         onChangeHandler={changeBorderSize}
       />
-      <button type="submit">Save</button>
+      <Button type="submit">Save</Button>
     </form>
   );
 };
