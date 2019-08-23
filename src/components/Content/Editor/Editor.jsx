@@ -1,12 +1,26 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import './Editor.scss';
 
-const Editor = () => {
+const Editor = ({
+  borderSize,
+  color,
+  size,
+  changeBorderSize,
+  changeColor,
+  changeSize
+}) => {
   return (
     <form className="editor">
       <label htmlFor="rectColor">
         Color
-        <input type="color" id="rectColor" name="rectColor" />
+        <input
+          type="color"
+          id="rectColor"
+          name="rectColor"
+          value={color}
+          onChange={event => changeColor(event.target.value)}
+        />
       </label>
       <label htmlFor="rectSize">
         Size
@@ -17,6 +31,8 @@ const Editor = () => {
           min="100"
           max="400"
           step="10"
+          value={size}
+          onChange={event => changeSize(Number(event.target.value))}
         />
       </label>
       <label htmlFor="rectBorder">
@@ -27,11 +43,22 @@ const Editor = () => {
           name="rectBorder"
           min="0"
           max="20"
+          value={borderSize}
+          onChange={event => changeBorderSize(Number(event.target.value))}
         />
       </label>
       <button type="submit">Save</button>
     </form>
   );
+};
+
+Editor.propTypes = {
+  borderSize: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
+  changeBorderSize: PropTypes.func.isRequired,
+  changeColor: PropTypes.func.isRequired,
+  changeSize: PropTypes.func.isRequired
 };
 
 export default memo(Editor);

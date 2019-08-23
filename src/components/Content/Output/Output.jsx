@@ -5,7 +5,7 @@ import './Output.scss';
 const Output = ({ borderSize, color, size }) => {
   const rectStyle = {
     border: `solid black ${borderSize}px`,
-    backgroundColor: `#${color}`,
+    backgroundColor: `${color}`,
     height: `${size}px`,
     width: `${size}px`
   };
