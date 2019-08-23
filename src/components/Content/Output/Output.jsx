@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Rectangle from 'components/generic/Rectangle/Rectangle';
 import './Output.scss';
 
 const Output = ({ borderSize, color, size }) => {
-  const rectStyle = {
-    border: `solid black ${borderSize}px`,
-    backgroundColor: `${color}`,
-    height: `${size}px`,
-    width: `${size}px`
-  };
   return (
     <div className="output">
-      <div className="rectangle" style={rectStyle} />
+      <Rectangle borderSize={borderSize} color={color} size={size} />
     </div>
   );
 };
