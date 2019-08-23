@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import './RangeInput.scss';
+import '../Input.scss';
 
 const RangeInput = ({
   min,
@@ -12,9 +12,9 @@ const RangeInput = ({
   onChangeHandler
 }) => {
   return (
-    <label htmlFor={name} className="range-input">
+    <label htmlFor={name} className="input">
       {displayName}
-      <div className="range-input-right">
+      <div className="input-right">
         <input
           type="range"
           id={name}

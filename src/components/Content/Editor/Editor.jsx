@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/generic/Button/Button';
-import RangeInput from 'components/generic/RangeInput/RangeInput';
+import ColorInput from 'components/generic/Input/ColorInput/ColorInput';
+import RangeInput from 'components/generic/Input/RangeInput/RangeInput';
 import './Editor.scss';
 
 const Editor = ({
@@ -23,16 +24,12 @@ const Editor = ({
         addImage(borderSize, color, height, width);
       }}
     >
-      <label htmlFor="rectColor">
-        Color
-        <input
-          type="color"
-          id="rectColor"
-          name="rectColor"
-          value={color}
-          onChange={event => changeColor(event.target.value)}
-        />
-      </label>
+      <ColorInput
+        displayName="Color"
+        name="color"
+        value={color}
+        onChangeHandler={changeColor}
+      />
       <RangeInput
         min={10}
         max={250}

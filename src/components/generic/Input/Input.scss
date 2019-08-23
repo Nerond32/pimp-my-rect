@@ -1,14 +1,15 @@
-.range-input {
+.input {
     display:flex;
     align-content:flex-end;
     width:320px;
-    .range-input-right {
+    .input-right {
         float:right;
         input {
             vertical-align:middle;
         }
         span {
             display:inline-block;
+            margin-left:0.8em;
             width:2em;
         }
     }
