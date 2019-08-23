@@ -12,18 +12,21 @@ const RangeInput = ({
   onChangeHandler
 }) => {
   return (
-    <label htmlFor={name}>
+    <label htmlFor={name} className="range-input">
       {displayName}
-      <input
-        type="range"
-        id={name}
-        name={name}
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={event => onChangeHandler(Number(event.target.value))}
-      />
+      <div className="range-input-right">
+        <input
+          type="range"
+          id={name}
+          name={name}
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={event => onChangeHandler(Number(event.target.value))}
+        />
+        <span>{value}</span>
+      </div>
     </label>
   );
 };

@@ -1,0 +1,15 @@
+.range-input {
+    display:flex;
+    align-content:flex-end;
+    width:320px;
+    .range-input-right {
+        float:right;
+        input {
+            vertical-align:middle;
+        }
+        span {
+            display:inline-block;
+            width:2em;
+        }
+    }
+}
