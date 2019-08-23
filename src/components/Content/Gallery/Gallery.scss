@@ -9,10 +9,18 @@
         margin: 1em 0 1em 3em;
         padding:0.3em;
     }
-    .image-container {
+    .gallery-container {
         display:flex;
         flex-wrap:wrap;
         justify-content:space-around;
         padding:1em;
+        .image-container {
+            position:relative;
+            button {
+                position:absolute;
+                right:0.6em;
+                top:0.3em;
+            }
+        }
     }
 }

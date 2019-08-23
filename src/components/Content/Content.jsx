@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addImage } from 'actions/galleryActions';
+import { addImage, deleteImage } from 'actions/galleryActions';
 import {
   changeBorderSize,
   changeColor,
@@ -20,6 +20,7 @@ const Content = ({
   width,
   images,
   addImage,
+  deleteImage,
   changeBorderSize,
   changeColor,
   changeHeight,
@@ -44,7 +45,7 @@ const Content = ({
         height={height}
         width={width}
       />
-      <Gallery images={images} />
+      <Gallery images={images} deleteImage={deleteImage} />
     </div>
   );
 };
@@ -59,10 +60,12 @@ Content.propTypes = {
       id: PropTypes.string.isRequired,
       borderSize: PropTypes.number.isRequired,
       color: PropTypes.string.isRequired,
-      size: PropTypes.number.isRequired
+      height: PropTypes.number.isRequired,
+      width: PropTypes.number.isRequired
     })
   ).isRequired,
   addImage: PropTypes.func.isRequired,
+  deleteImage: PropTypes.func.isRequired,
   changeBorderSize: PropTypes.func.isRequired,
   changeColor: PropTypes.func.isRequired,
   changeHeight: PropTypes.func.isRequired,
@@ -80,6 +83,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   addImage: (borderSize, color, height, width) =>
     dispatch(addImage(borderSize, color, height, width)),
+  deleteImage: id => dispatch(deleteImage(id)),
   changeBorderSize: borderSize => dispatch(changeBorderSize(borderSize)),
   changeColor: color => dispatch(changeColor(color)),
   changeHeight: height => dispatch(changeHeight(height)),

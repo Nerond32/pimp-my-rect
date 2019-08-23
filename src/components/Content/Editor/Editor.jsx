@@ -20,7 +20,6 @@ const Editor = ({
       className="editor"
       onSubmit={event => {
         event.preventDefault();
-        console.log(width);
         addImage(borderSize, color, height, width);
       }}
     >

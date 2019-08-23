@@ -1,7 +1,7 @@
 @import '../../../assets/variables.scss';
 
 button {
-    background:transparent;
+    background:$background;
     border:1px solid $accent;
     border-radius:46%;
     box-shadow: 1px 1px 1px $accent;
@@ -11,7 +11,7 @@ button {
     padding:0.8em;
     transition-duration: 0.2s;
     &:hover {
-        background-color: rgba(lighten($accent,20%),0.2);
+        background-color: lighten($accent,20%);
     }
     svg {
         color:$accent;
