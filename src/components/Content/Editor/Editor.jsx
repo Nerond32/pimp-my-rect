@@ -6,12 +6,19 @@ const Editor = ({
   borderSize,
   color,
   size,
+  addImage,
   changeBorderSize,
   changeColor,
   changeSize
 }) => {
   return (
-    <form className="editor">
+    <form
+      className="editor"
+      onSubmit={event => {
+        event.preventDefault();
+        addImage(borderSize, color, size);
+      }}
+    >
       <label htmlFor="rectColor">
         Color
         <input
@@ -56,6 +63,7 @@ Editor.propTypes = {
   borderSize: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
   size: PropTypes.number.isRequired,
+  addImage: PropTypes.func.isRequired,
   changeBorderSize: PropTypes.func.isRequired,
   changeColor: PropTypes.func.isRequired,
   changeSize: PropTypes.func.isRequired
