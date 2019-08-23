@@ -6,17 +6,20 @@ import './Gallery.scss';
 const Gallery = ({ images }) => {
   return (
     <div className="gallery">
-      {images.map(image => {
-        const { id, borderSize, color, size } = image;
-        return (
-          <Rectangle
-            key={id}
-            borderSize={borderSize}
-            color={color}
-            size={size}
-          />
-        );
-      })}
+      <h2>Your saved pimp&apos;d rects</h2>
+      <div className="image-container">
+        {images.map(image => {
+          const { id, borderSize, color, size } = image;
+          return (
+            <Rectangle
+              key={id}
+              borderSize={borderSize}
+              color={color}
+              size={size}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

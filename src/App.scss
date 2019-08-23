@@ -1,5 +1,8 @@
+@import 'src/assets/variables.scss';
+
 body, html, #root, .app {
   background-color:white;
+  color:$foreground;
   font-family:'Verdana';
   font-size: 1em;
   height:100vh;
@@ -7,10 +10,6 @@ body, html, #root, .app {
   margin:0;
   padding:0;
 }
-
-// .app * {
-//   border:1px solid cyan;
-// }
 
 .app {
   display:flex;

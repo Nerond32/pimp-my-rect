@@ -1,7 +1,17 @@
 @import '../../../assets/variables.scss';
-
 .gallery {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-around;
+    box-shadow: 4px 4px $accent, -.2em 0 .2em $foreground;
+    h2 {
+        border-bottom: 2px solid $accent;
+        border-bottom-left-radius:20%;
+        display:inline-block;
+        margin: 1em 0 1em 3em;
+        padding:0.3em;
+    }
+    .image-container {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-around;
+        padding:1em;
+    }
 }
