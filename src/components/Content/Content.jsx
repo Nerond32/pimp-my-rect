@@ -8,7 +8,7 @@ const Content = () => {
   return (
     <div className="content">
       <Editor />
-      <Output />
+      <Output borderSize={5} color="222222" size={200} />
       <Gallery />
     </div>
   );
