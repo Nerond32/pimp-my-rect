@@ -9,7 +9,7 @@ import {
 import Button from 'components/generic/Button/Button';
 import Rectangle from 'components/generic/Rectangle/Rectangle';
 import sortRectsBy from 'utils/sortRectsBy';
-import Sort from './Sort/Sort';
+import GalleryOptions from './GalleryOptions/GalleryOptions';
 import './Gallery.scss';
 
 const Gallery = ({
@@ -24,7 +24,7 @@ const Gallery = ({
   return (
     <div className="gallery">
       <h2>Your saved pimp&apos;d rects</h2>
-      <Sort onChange={changeSortBy} />
+      <GalleryOptions />
       <div className="gallery-container">
         {sortedRects.map(image => {
           const { id, borderSize, color, height, width } = image;

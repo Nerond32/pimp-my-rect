@@ -1,0 +1,23 @@
+@import '../../../../assets/variables.scss';
+
+.text-input {
+    display:inline-block;
+    margin:2em;
+    position:relative;
+    label {
+        color:$fontColorLight;
+        font-size:0.8em;
+        position:absolute;
+        left:0.1em;
+        top:-1.2em;
+    }
+    input {
+        background-color:transparent;
+        border:none;
+        border-bottom:1px solid $fontColorLight;
+        color:$fontColorLight;
+        flex:1;
+        height:100%;
+        width:50px;
+    }
+}

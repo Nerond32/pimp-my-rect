@@ -32,7 +32,8 @@ html, body, #root, .app {
   }
   .editor-preview {
     grid-area:output;
-    overflow: hidden;
+    min-height:$galleryRectSize;
+    min-width:$galleryRectSize;
     padding:0.8em;
   }
   .gallery {

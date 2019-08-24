@@ -23,7 +23,7 @@ Requirements:
   - :x: [optional but very welcome] some animations
   - :x: [optional but very welcome] filtering options
   - :heavy_check_mark: [optional but very welcome] sorting options
-- :x: :wavy_dash: `Mobile still needs some polishes, Safari not checked yet` It should work well in the newest browsers (mobile Chrome and Safari included!).
+- :heavy_check_mark: :wavy_dash: `Looks good and is responsive, couldn't test mobile Safari due to lack of a device supporting it, but according to chrome dev tools it should scale well even on iPhone 5/SE size` It should work well in the newest browsers (mobile Chrome and Safari included!).
 - :heavy_check_mark: The whole thing should be split into modules (preferably with CommonJS or ES6 syntax but AMD is also fine).
 
 * :wavy_dash: `On the same page` It’s up to you if you show Gallery on the same page or under e.g. localhost:xxxx/gallery.

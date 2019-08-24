@@ -1,0 +1,24 @@
+@import '../../../assets/variables.scss';
+
+.gallery-options-form {
+    display:inline-block;
+    .filter, .sort {
+        display:inline-block;
+        margin-left:1em;
+    }
+}
+
+@media only screen and (max-width: $mobileSize) {
+    .gallery-options-form {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        .filter, .sort {
+            display:block;
+            margin-top:1em;
+        }
+        .filter > .filter-inputs {
+            display:block;
+        }
+    }
+}
