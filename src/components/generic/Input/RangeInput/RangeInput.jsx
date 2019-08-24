@@ -12,9 +12,9 @@ const RangeInput = ({
   onChangeHandler
 }) => {
   return (
-    <label htmlFor={name} className="input">
-      {displayName}
-      <div className="input-right">
+    <div className="input">
+      <label htmlFor={name}>{displayName}</label>
+      <div className="input-field">
         <input
           type="range"
           id={name}
@@ -27,7 +27,7 @@ const RangeInput = ({
         />
         <span>{value}</span>
       </div>
-    </label>
+    </div>
   );
 };
 

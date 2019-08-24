@@ -18,11 +18,15 @@
         .rect-container {
             height:$rectMaxSize;
             width:$rectMaxSize;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin:1em;
             position:relative;
             button {
                 position:absolute;
-                right:0.6em;
-                top:0.3em;
+                right:0em;
+                top:0em;
             }
         }
     }

@@ -5,7 +5,7 @@ header {
     box-shadow: 5px 5px 5px $accent;
     font-size:1rem;
     padding:1.5em;
-    width:16em;
+    max-width:12em;
     .header-text {
         margin: 0 auto;
         width: 10em; 
@@ -21,5 +21,14 @@ header {
             font-weight:400;
             text-align:right;
         }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        box-shadow:none;
+        max-height:1em;
+        margin: 0 auto;
+        padding:0.5em;
     }
 }

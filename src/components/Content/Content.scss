@@ -3,23 +3,25 @@
 .content {
     display:grid;
     flex:1;
-    grid:1fr 1em 2fr / 1fr 1em 1fr;
+    grid:1fr 1em 4fr / 1fr 1em 1fr;
     grid-template-areas:
       "input . output"
       ". . ."
       "gallery gallery gallery";
-    margin:0.5em;
-    padding: 2em;
+    margin-top: 1em;
+    padding: 0.8em;
     position:relative;
+    .editor {
+      display:flex;
+      align-content:center;
+      align-items:center;
+      justify-content:center;
+    }
     .editor-input {
       grid-area:input;
-      position:relative;
     }
     .editor-preview {
       grid-area:output;
-      min-height:$rectMaxSize;
-      min-width:$rectMaxSize;
-      position:relative;
     }
     .gallery {
       grid-area:gallery;
@@ -28,9 +30,9 @@
 
 @media only screen and (max-width: 600px) {
   .content {
-    grid:1fr 1em 1fr 1em 2fr / 1fr;
+    grid:1fr 1em 1fr 1em 0fr / 1fr;
     grid-template-areas:
-        "editor-input"
+        "input"
         "."
         "output"
         "."

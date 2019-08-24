@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import './Rectangle.scss';
 
 const Rectangle = ({ borderSize, color, height, width }) => {
   const rectStyle = {

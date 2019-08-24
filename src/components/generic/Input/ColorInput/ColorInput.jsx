@@ -4,9 +4,9 @@ import '../Input.scss';
 
 const ColorInput = ({ displayName, name, value, onChangeHandler }) => {
   return (
-    <label htmlFor={name} className="input">
-      {displayName}
-      <div className="input-right">
+    <div className="input">
+      <label htmlFor={name}>{displayName}</label>
+      <div className="input-field">
         <input
           type="color"
           id={name}
@@ -16,7 +16,7 @@ const ColorInput = ({ displayName, name, value, onChangeHandler }) => {
         />
         <span>{value}</span>
       </div>
-    </label>
+    </div>
   );
 };
 

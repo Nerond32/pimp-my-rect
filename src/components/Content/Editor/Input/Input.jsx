@@ -25,25 +25,25 @@ const Input = ({
       }}
     >
       <ColorInput
-        displayName="Color"
+        displayName="Color:"
         name="color"
         value={color}
         onChangeHandler={changeColor}
       />
       <RangeInput
         min={10}
-        max={250}
+        max={200}
         step={5}
-        displayName="Height"
+        displayName="Height:"
         name="rectHeight"
         value={height}
         onChangeHandler={changeHeight}
       />
       <RangeInput
         min={10}
-        max={250}
+        max={200}
         step={5}
-        displayName="Width"
+        displayName="Width:"
         name="rectWidth"
         value={width}
         onChangeHandler={changeWidth}
@@ -51,7 +51,7 @@ const Input = ({
       <RangeInput
         min={1}
         max={20}
-        displayName="Border size"
+        displayName="Border size:"
         name="rectBorder"
         value={borderSize}
         onChangeHandler={changeBorderSize}

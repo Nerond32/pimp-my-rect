@@ -25,7 +25,7 @@ const Editor = ({
 }) => {
   return (
     <>
-      <div className="editor-input">
+      <div className="editor editor-input">
         <Input
           borderSize={borderSize}
           color={color}
@@ -38,7 +38,7 @@ const Editor = ({
           changeWidth={changeWidth}
         />
       </div>
-      <div className="editor-preview">
+      <div className="editor editor-preview">
         <Rectangle
           borderSize={borderSize}
           color={color}
