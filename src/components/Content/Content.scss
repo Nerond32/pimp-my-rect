@@ -5,19 +5,21 @@
     flex:1;
     grid:1fr 1em 2fr / 1fr 1em 1fr;
     grid-template-areas:
-      "editor . output"
+      "input . output"
       ". . ."
       "gallery gallery gallery";
     margin:0.5em;
     padding: 2em;
     position:relative;
-    .editor {
-      grid-area:editor;
+    .editor-input {
+      grid-area:input;
+      position:relative;
     }
-    .output {
+    .editor-preview {
       grid-area:output;
       min-height:$rectMaxSize;
       min-width:$rectMaxSize;
+      position:relative;
     }
     .gallery {
       grid-area:gallery;
@@ -28,7 +30,7 @@
   .content {
     grid:1fr 1em 1fr 1em 2fr / 1fr;
     grid-template-areas:
-        "editor"
+        "editor-input"
         "."
         "output"
         "."

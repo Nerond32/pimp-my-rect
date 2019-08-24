@@ -1,9 +1,16 @@
 import React, { memo } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Button from 'components/generic/Button/Button';
-import ColorInput from 'components/generic/Input/ColorInput/ColorInput';
-import RangeInput from 'components/generic/Input/RangeInput/RangeInput';
-import './Editor.scss';
+import Rectangle from 'components/generic/Rectangle/Rectangle';
+import { addImage } from 'actions/galleryActions';
+import {
+  changeBorderSize,
+  changeColor,
+  changeHeight,
+  changeWidth
+} from 'actions/editorActions';
+
+import Input from './Input/Input';
 
 const Editor = ({
   borderSize,
@@ -17,47 +24,29 @@ const Editor = ({
   changeWidth
 }) => {
   return (
-    <form
-      className="editor"
-      onSubmit={event => {
-        event.preventDefault();
-        addImage(borderSize, color, height, width);
-      }}
-    >
-      <ColorInput
-        displayName="Color"
-        name="color"
-        value={color}
-        onChangeHandler={changeColor}
-      />
-      <RangeInput
-        min={10}
-        max={250}
-        step={5}
-        displayName="Height"
-        name="rectHeight"
-        value={height}
-        onChangeHandler={changeHeight}
-      />
-      <RangeInput
-        min={10}
-        max={250}
-        step={5}
-        displayName="Width"
-        name="rectWidth"
-        value={width}
-        onChangeHandler={changeWidth}
-      />
-      <RangeInput
-        min={1}
-        max={20}
-        displayName="Border size"
-        name="rectBorder"
-        value={borderSize}
-        onChangeHandler={changeBorderSize}
-      />
-      <Button type="submit">Save</Button>
-    </form>
+    <>
+      <div className="editor-input">
+        <Input
+          borderSize={borderSize}
+          color={color}
+          height={height}
+          width={width}
+          addImage={addImage}
+          changeBorderSize={changeBorderSize}
+          changeColor={changeColor}
+          changeHeight={changeHeight}
+          changeWidth={changeWidth}
+        />
+      </div>
+      <div className="editor-preview">
+        <Rectangle
+          borderSize={borderSize}
+          color={color}
+          height={height}
+          width={width}
+        />
+      </div>
+    </>
   );
 };
 
@@ -73,4 +62,23 @@ Editor.propTypes = {
   changeWidth: PropTypes.func.isRequired
 };
 
-export default memo(Editor);
+const mapStateToProps = state => ({
+  borderSize: state.editor.borderSize,
+  color: state.editor.color,
+  height: state.editor.height,
+  width: state.editor.width
+});
+
+const mapDispatchToProps = dispatch => ({
+  addImage: (borderSize, color, height, width) =>
+    dispatch(addImage(borderSize, color, height, width)),
+  changeBorderSize: borderSize => dispatch(changeBorderSize(borderSize)),
+  changeColor: color => dispatch(changeColor(color)),
+  changeHeight: height => dispatch(changeHeight(height)),
+  changeWidth: width => dispatch(changeWidth(width))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(memo(Editor));

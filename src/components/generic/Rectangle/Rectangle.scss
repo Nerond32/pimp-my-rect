@@ -1,16 +1,7 @@
-@import '../../../assets/variables.scss';
-
-.rect-container {
-    height:$rectMaxSize;
-    width:$rectMaxSize;
+.rectangle {
     margin: 0.5em;
-    position: relative;
-    .rectangle {
-        width:10em;
-        height:10em;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

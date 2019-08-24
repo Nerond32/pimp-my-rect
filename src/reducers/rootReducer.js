@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import gallery from './galleryReducer';
-import rect from './rectReducer';
+import editor from './editorReducer';
 
 const galleryPersistConfig = {
   key: 'root',
@@ -12,5 +12,5 @@ const galleryPersistConfig = {
 
 export default combineReducers({
   gallery: persistReducer(galleryPersistConfig, gallery),
-  rect
+  editor
 });

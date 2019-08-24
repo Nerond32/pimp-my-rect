@@ -15,7 +15,9 @@
         flex-wrap:wrap;
         justify-content:space-around;
         padding:1em;
-        .image-container {
+        .rect-container {
+            height:$rectMaxSize;
+            width:$rectMaxSize;
             position:relative;
             button {
                 position:absolute;

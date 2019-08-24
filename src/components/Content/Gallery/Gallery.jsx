@@ -29,7 +29,7 @@ const Gallery = ({
         {sortedRects.map(image => {
           const { id, borderSize, color, height, width } = image;
           return (
-            <div className="image-container" key={id}>
+            <div className="rect-container" key={id}>
               <Rectangle
                 borderSize={borderSize}
                 color={color}

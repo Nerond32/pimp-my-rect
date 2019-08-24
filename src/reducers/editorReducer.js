@@ -3,7 +3,7 @@ import {
   CHANGE_COLOR,
   CHANGE_HEIGHT,
   CHANGE_WIDTH
-} from 'actions/rectActions';
+} from 'actions/editorActions';
 
 const initialState = {
   borderSize: 5,
