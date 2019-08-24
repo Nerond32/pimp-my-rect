@@ -1,9 +1,10 @@
 ## Pimp my rect ( ͡° ͜ʖ ͡°)
 
 Legend:
-:heavy_check_mark: Done
-:x: Not done
-:heavy_plus_sign: Added feature
+
+:heavy_check_mark: Done  
+:x: Not done  
+:heavy_plus_sign: Added feature  
 :wavy_dash: `Comment`
 
 Requirements:
