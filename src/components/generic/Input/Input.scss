@@ -1,6 +1,9 @@
+@import '../../../assets/variables.scss';
+
 .input {
     display:flex;
     justify-content:space-between;
+    margin-top:0.5em;
     .input-field {
         input {
             vertical-align:middle;
@@ -8,7 +11,13 @@
         span {
             display:inline-block;
             margin-left:0.8em;
-            min-width:2em;
+            min-width:4em;
         }
     }
+}
+
+@media only screen and (max-width: $mobileSize) {
+    .input {
+        flex-direction: column;
+    }   
 }

@@ -2,7 +2,6 @@
 
 header {
     background-color:lighten($background,10%);
-    box-shadow: 5px 5px 5px $accent;
     font-size:1rem;
     padding:1.5em;
     max-width:12em;
@@ -15,7 +14,7 @@ header {
             margin:2px;
         }
         h2 {
-            color:$foregroundLight;
+            color:$fontColorLight;
             font-size: 0.7rem;
             margin:2px;
             font-weight:400;
@@ -24,11 +23,11 @@ header {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $mobileSize) {
     header {
-        box-shadow:none;
-        max-height:1em;
+        max-height:2.5em;
         margin: 0 auto;
         padding:0.5em;
+        width:100%;
     }
 }

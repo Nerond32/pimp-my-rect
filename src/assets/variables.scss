@@ -1,6 +1,8 @@
-$accent:#4432bb;
-$foreground: #222222;
-$foregroundLight: darken($foreground, 10%);
-$background:#f8f5f5;
+$background:#222222;
+$primary:#cc7422;
+$secondary:#4432bb;
+$fontColor: #f8f5f5;
+$fontColorLight: lighten($fontColor, 10%);
 
-$rectMaxSize: 200px;
+$galleryRectSize: 200px;
+$mobileSize: 600px;

@@ -1,0 +1,12 @@
+@import '../../../../assets/variables.scss';
+
+@media only screen and (max-width: $mobileSize) {
+    .editor-input-form {
+        position: relative;
+        button {
+            position: absolute;
+            top:0;
+            right:0;
+        }
+    }   
+}

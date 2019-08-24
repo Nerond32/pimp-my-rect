@@ -32,7 +32,7 @@ const Input = ({
       />
       <RangeInput
         min={10}
-        max={200}
+        max={10000}
         step={5}
         displayName="Height:"
         name="rectHeight"
@@ -41,7 +41,7 @@ const Input = ({
       />
       <RangeInput
         min={10}
-        max={200}
+        max={10000}
         step={5}
         displayName="Width:"
         name="rectWidth"
@@ -49,8 +49,8 @@ const Input = ({
         onChangeHandler={changeWidth}
       />
       <RangeInput
-        min={1}
-        max={20}
+        min={0}
+        max={1000}
         displayName="Border size:"
         name="rectBorder"
         value={borderSize}

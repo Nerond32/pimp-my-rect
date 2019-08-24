@@ -3,7 +3,10 @@ const sortRectsBy = (rects, sortBy) => {
   switch (sortBy) {
     case 'size':
       sortedRects = rects.sort((a, b) =>
-        a.height * a.width > b.height * b.width ? 1 : -1
+        (a.height + a.borderSize * 2) * (a.width + a.borderSize * 2) >
+        (b.height + b.borderSize * 2) * (b.width + b.borderSize * 2)
+          ? 1
+          : -1
       );
       break;
     case 'borderSize':

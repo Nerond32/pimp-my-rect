@@ -29,13 +29,18 @@ const Gallery = ({
         {sortedRects.map(image => {
           const { id, borderSize, color, height, width } = image;
           return (
-            <div className="rect-container" key={id}>
-              <Rectangle
-                borderSize={borderSize}
-                color={color}
-                height={height}
-                width={width}
-              />
+            <div className="gallery-item" key={id}>
+              <span className="size">
+                {2 * borderSize + image.width}x{2 * borderSize + image.height}
+              </span>
+              <div className="rect-container">
+                <Rectangle
+                  borderSize={borderSize}
+                  color={color}
+                  height={height}
+                  width={width}
+                />
+              </div>
               <Button onClick={() => deleteImage(id)}>X</Button>
             </div>
           );
