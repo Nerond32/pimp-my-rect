@@ -1,7 +1,12 @@
 import React, { memo } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addImage, deleteImage } from 'actions/galleryActions';
+import {
+  addImage,
+  deleteImage,
+  changeFilterBy,
+  changeSortBy
+} from 'actions/galleryActions';
 import {
   changeBorderSize,
   changeColor,
@@ -21,10 +26,14 @@ const Content = ({
   images,
   addImage,
   deleteImage,
+  changeFilterBy,
+  changeSortBy,
   changeBorderSize,
   changeColor,
   changeHeight,
-  changeWidth
+  changeWidth,
+  filterBy,
+  sortBy
 }) => {
   return (
     <div className="content">
@@ -45,7 +54,14 @@ const Content = ({
         height={height}
         width={width}
       />
-      <Gallery images={images} deleteImage={deleteImage} />
+      <Gallery
+        images={images}
+        deleteImage={deleteImage}
+        changeFilterBy={changeFilterBy}
+        changeSortBy={changeSortBy}
+        filterBy={filterBy}
+        sortBy={sortBy}
+      />
     </div>
   );
 };
@@ -66,10 +82,14 @@ Content.propTypes = {
   ).isRequired,
   addImage: PropTypes.func.isRequired,
   deleteImage: PropTypes.func.isRequired,
+  changeFilterBy: PropTypes.func.isRequired,
+  changeSortBy: PropTypes.func.isRequired,
   changeBorderSize: PropTypes.func.isRequired,
   changeColor: PropTypes.func.isRequired,
   changeHeight: PropTypes.func.isRequired,
-  changeWidth: PropTypes.func.isRequired
+  changeWidth: PropTypes.func.isRequired,
+  filterBy: PropTypes.string.isRequired,
+  sortBy: PropTypes.string.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -77,13 +97,17 @@ const mapStateToProps = state => ({
   color: state.rect.color,
   height: state.rect.height,
   width: state.rect.width,
-  images: state.gallery.images
+  images: state.gallery.images,
+  filterBy: state.gallery.filterBy,
+  sortBy: state.gallery.sortBy
 });
 
 const mapDispatchToProps = dispatch => ({
   addImage: (borderSize, color, height, width) =>
     dispatch(addImage(borderSize, color, height, width)),
   deleteImage: id => dispatch(deleteImage(id)),
+  changeFilterBy: filterBy => dispatch(changeFilterBy(filterBy)),
+  changeSortBy: sortBy => dispatch(changeSortBy(sortBy)),
   changeBorderSize: borderSize => dispatch(changeBorderSize(borderSize)),
   changeColor: color => dispatch(changeColor(color)),
   changeHeight: height => dispatch(changeHeight(height)),

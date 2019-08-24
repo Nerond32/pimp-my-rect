@@ -20,7 +20,9 @@ Requirements:
 - **Gallery**: a list of saved Output divs with preserved styling. It should be possible to:
   - :heavy_check_mark: remove Outputs from the list
   - :heavy_check_mark: :wavy_dash: `LocalStorage` What’s crucial: the gallery’s state persists after the browser restarts. To obtain this goal, you’re allowed to use any technology you feel comfortable with (i.e. WS + IndexedDB, Firebase, Node+MongoDB, LocalStorage).
-  - :x: [optional but very welcome] some animations or sorting/filtering options
+  - :x: [optional but very welcome] some animations
+  - :x: [optional but very welcome] filtering options
+  - :heavy_check_mark: [optional but very welcome] sorting options
 - :x: :wavy_dash: `Mobile still needs some polishes, Safari not checked yet` It should work well in the newest browsers (mobile Chrome and Safari included!).
 - :heavy_check_mark: The whole thing should be split into modules (preferably with CommonJS or ES6 syntax but AMD is also fine).
 
