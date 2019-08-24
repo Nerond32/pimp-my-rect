@@ -12,6 +12,49 @@ html, body, #root, .app {
 }
 
 .app {
-  display:flex;
-  flex-direction:column;
+  display:grid;
+  grid:5em 1em 4fr 1em 2fr / 360px 1em 1fr;
+  grid-template-areas:
+    "header . output"
+    ". . output"
+    "input . output"
+    ". . ."
+    "gallery gallery gallery";
+  padding: 0;
+  .editor {
+    display:flex;
+    align-content:center;
+    align-items:center;
+    justify-content:center;
+  }
+  .editor-input {
+    grid-area:input;
+  }
+  .editor-preview {
+    grid-area:output;
+    overflow: hidden;
+    padding:0.8em;
+  }
+  .gallery {
+    grid-area:gallery;
+  }
+  header{
+    grid-area:header;
+  }
+  overflow-y:auto; 
+}
+
+@media only screen and (max-width: $mobileSize) {
+.app {
+  grid:4em 1em 1fr 1em 1fr 1em 1fr / 1fr;
+  grid-template-areas:
+    "header"
+    "."
+    "input"
+    "."
+    "output"
+    "."
+    "gallery";
+}
+
 }

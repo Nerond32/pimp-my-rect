@@ -2,21 +2,23 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from 'store/store';
-import Content from 'components/Content/Content';
 import Header from 'components/Header/Header';
+import Editor from 'components/Editor/Editor';
+import Gallery from 'components/Gallery/Gallery';
 import './App.scss';
 
-function App() {
+const App = () => {
   return (
     <div className="app">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Header />
-          <Content />
+          <Editor />
+          <Gallery />
         </PersistGate>
       </Provider>
     </div>
   );
-}
+};
 
 export default App;
