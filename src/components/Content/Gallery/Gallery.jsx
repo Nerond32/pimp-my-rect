@@ -1,5 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import {
+  deleteImage,
+  changeFilterBy,
+  changeSortBy
+} from 'actions/galleryActions';
 import Button from 'components/generic/Button/Button';
 import Rectangle from 'components/generic/Rectangle/Rectangle';
 import sortRectsBy from 'utils/sortRectsBy';
@@ -56,4 +62,19 @@ Gallery.propTypes = {
   sortBy: PropTypes.string.isRequired
 };
 
-export default Gallery;
+const mapStateToProps = state => ({
+  images: state.gallery.images,
+  filterBy: state.gallery.filterBy,
+  sortBy: state.gallery.sortBy
+});
+
+const mapDispatchToProps = dispatch => ({
+  deleteImage: id => dispatch(deleteImage(id)),
+  changeFilterBy: filterBy => dispatch(changeFilterBy(filterBy)),
+  changeSortBy: sortBy => dispatch(changeSortBy(sortBy))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(memo(Gallery));
