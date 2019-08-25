@@ -10,36 +10,6 @@
         margin: 1em 2em 1em 3em;
         padding:0.4em;
     }
-    .gallery-container {
-        align-self:end;
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:space-around;
-        padding:1em;
-        .gallery-item {
-            border: 1px solid lighten($background,10%);
-            margin:0.5em;
-            padding: 1em;
-            position:relative;
-            button {
-                position:absolute;
-                right:-1em;
-                top:-1em;
-            }
-            span {
-                position:absolute;
-                left:0;
-                top:0;
-            }
-            .rect-container {
-                height:$galleryRectSize;
-                width:$galleryRectSize;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-            }
-        }
-    }
 }
 
 @media only screen and (max-width: $mobileSize) {

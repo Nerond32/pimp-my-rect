@@ -1,19 +1,14 @@
 import React from 'react';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { Gallery } from './Gallery';
+import GalleryContainer from './GalleryContainer';
 
 configure({ adapter: new Adapter() });
 
 describe('gallery', () => {
   const mockFunction = () => {};
   const funcProps = {
-    deleteImage: mockFunction,
-    changeFilterBy: mockFunction,
-    changeSortBy: mockFunction,
-    changeSortDirection: mockFunction,
-    changeMinFilterValue: mockFunction,
-    changeMaxFilterValue: mockFunction
+    deleteImage: mockFunction
   };
   const filterSortProps = {
     filterBy: 'borderSize',
@@ -39,18 +34,18 @@ describe('gallery', () => {
     { id: '4314', borderSize: 20, color: '#001122', height: 367, width: 200 }
   ];
   it('renders correct amount of rectangles', () => {
-    const gallery3 = shallow(<Gallery rects={rects3} {...props} />);
-    const gallery7 = shallow(<Gallery rects={rects7} {...props} />);
+    const gallery3 = shallow(<GalleryContainer rects={rects3} {...props} />);
+    const gallery7 = shallow(<GalleryContainer rects={rects7} {...props} />);
     expect(gallery3.find('.gallery-item')).toHaveLength(3);
     expect(gallery7.find('.gallery-item')).toHaveLength(7);
   });
   it('renders correctly with empty array of rectangles', () => {
-    const gallery0 = shallow(<Gallery rects={[]} {...props} />);
+    const gallery0 = shallow(<GalleryContainer rects={[]} {...props} />);
     expect(gallery0.find('.gallery-item')).toHaveLength(0);
   });
   it('renders with filtered out rectangles', () => {
     const galleryFiltered3 = shallow(
-      <Gallery
+      <GalleryContainer
         rects={rects3}
         {...funcProps}
         filterMin={4}
@@ -61,7 +56,7 @@ describe('gallery', () => {
       />
     );
     const galleryFiltered7 = shallow(
-      <Gallery
+      <GalleryContainer
         rects={rects7}
         {...funcProps}
         filterMin={0}

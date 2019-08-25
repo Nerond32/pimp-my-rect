@@ -9,14 +9,13 @@ import {
   changeMinFilterValue,
   changeMaxFilterValue
 } from 'actions/galleryActions';
-import Button from 'components/generic/Button/Button';
-import Rectangle from 'components/generic/Rectangle/Rectangle';
 import filterRectsBy from 'utils/filterRectsBy';
 import sortRectsBy from 'utils/sortRectsBy';
+import GalleryContainer from './GalleryContainer/GalleryContainer';
 import GalleryOptions from './GalleryOptions/GalleryOptions';
 import './Gallery.scss';
 
-export const Gallery = ({
+const Gallery = ({
   rects,
   deleteImage,
   changeFilterBy,
@@ -45,27 +44,15 @@ export const Gallery = ({
         filterMax={filterMax}
         sortDirection={sortDirection}
       />
-      <div className="gallery-container">
-        {sortedRects.map(image => {
-          const { id, borderSize, color, height, width } = image;
-          return (
-            <div className="gallery-item" key={id}>
-              <span className="size">
-                {2 * borderSize + image.width}x{2 * borderSize + image.height}
-              </span>
-              <div className="rect-container">
-                <Rectangle
-                  borderSize={borderSize}
-                  color={color}
-                  height={height}
-                  width={width}
-                />
-              </div>
-              <Button onClick={() => deleteImage(id)}>X</Button>
-            </div>
-          );
-        })}
-      </div>
+      <GalleryContainer
+        rects={sortedRects}
+        deleteImage={deleteImage}
+        filterBy={filterBy}
+        sortBy={sortBy}
+        sortDirection={sortDirection}
+        filterMin={filterMin}
+        filterMax={filterMax}
+      />
     </div>
   );
 };
