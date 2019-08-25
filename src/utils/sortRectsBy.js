@@ -1,4 +1,4 @@
-const sortRectsBy = (rects, sortBy) => {
+const sortRectsBy = (rects, sortBy, sortDirection) => {
   let sortedRects;
   switch (sortBy) {
     case 'size':
@@ -26,6 +26,9 @@ const sortRectsBy = (rects, sortBy) => {
       break;
     default:
       sortedRects = rects;
+  }
+  if (sortDirection === 'DESC') {
+    return sortedRects.reverse();
   }
   return sortedRects;
 };

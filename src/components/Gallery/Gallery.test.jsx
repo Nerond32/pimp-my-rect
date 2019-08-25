@@ -10,13 +10,15 @@ describe('gallery', () => {
   const funcProps = {
     deleteImage: mockFunction,
     changeFilterBy: mockFunction,
-    changeSortBy: mockFunction
+    changeSortBy: mockFunction,
+    changeSortDirection: mockFunction
   };
   const filterSortProps = {
     filterBy: 'borderSize',
     sortBy: 'size',
     filterMin: 0,
-    filterMax: 10000
+    filterMax: 10000,
+    sortDirection: 'DESC'
   };
   const props = {
     ...funcProps,
@@ -35,34 +37,36 @@ describe('gallery', () => {
     { id: '4314', borderSize: 20, color: '#001122', height: 367, width: 200 }
   ];
   it('renders correct amount of rectangles', () => {
-    const gallery3 = shallow(<Gallery images={rects3} {...props} />);
-    const gallery7 = shallow(<Gallery images={rects7} {...props} />);
+    const gallery3 = shallow(<Gallery rects={rects3} {...props} />);
+    const gallery7 = shallow(<Gallery rects={rects7} {...props} />);
     expect(gallery3.find('.gallery-item')).toHaveLength(3);
     expect(gallery7.find('.gallery-item')).toHaveLength(7);
   });
   it('renders correctly with empty array of rectangles', () => {
-    const gallery0 = shallow(<Gallery images={[]} {...props} />);
+    const gallery0 = shallow(<Gallery rects={[]} {...props} />);
     expect(gallery0.find('.gallery-item')).toHaveLength(0);
   });
   it('renders with filtered out rectangles', () => {
     const galleryFiltered3 = shallow(
       <Gallery
-        images={rects3}
+        rects={rects3}
         {...funcProps}
         filterMin={4}
         filterMax={115}
         filterBy="borderSize"
         sortBy="size"
+        sortDirection="DESC"
       />
     );
     const galleryFiltered7 = shallow(
       <Gallery
-        images={rects7}
+        rects={rects7}
         {...funcProps}
         filterMin={0}
         filterMax={2800000}
         filterBy="size"
         sortBy="size"
+        sortDirection="DESC"
       />
     );
     expect(galleryFiltered3.find('.gallery-item')).toHaveLength(2);

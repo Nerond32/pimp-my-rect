@@ -7,7 +7,7 @@ import editor from './editorReducer';
 const galleryPersistConfig = {
   key: 'root',
   storage,
-  whitelist: ['images']
+  whitelist: ['rects']
 };
 
 export default combineReducers({

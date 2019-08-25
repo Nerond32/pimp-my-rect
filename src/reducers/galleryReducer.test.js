@@ -2,7 +2,8 @@ import {
   addImage,
   deleteImage,
   changeFilterBy,
-  changeSortBy
+  changeSortBy,
+  changeSortDirection
 } from 'actions/galleryActions';
 import reducer, { initialState } from './galleryReducer';
 
@@ -23,12 +24,12 @@ describe('gallery reducer', () => {
     const action = addImage(...Object.values(newImage));
     const expectedState = {
       ...initialState,
-      images: [...initialState.images, { ...newImage, id: undefined }]
+      rects: [...initialState.rects, { ...newImage, id: undefined }]
     };
     const result = reducer(initialState, action);
     expect({
       ...result,
-      images: [...initialState.images, { ...newImage, id: undefined }]
+      rects: [...initialState.rects, { ...newImage, id: undefined }]
     }).toStrictEqual(expectedState);
   });
   it('should handle DELETE_IMAGE', () => {
@@ -40,9 +41,9 @@ describe('gallery reducer', () => {
     };
     const addAction = addImage(...Object.values(newImage));
     const stateWithImage = reducer(initialState, addAction);
-    const newImageId = stateWithImage.images[0].id;
+    const newImageId = stateWithImage.rects[0].id;
     const deleteAction = deleteImage(newImageId);
-    expect(reducer(stateWithImage, deleteAction).images).toHaveLength(0);
+    expect(reducer(stateWithImage, deleteAction).rects).toHaveLength(0);
   });
   it('should handle CHANGE_FILTER_BY', () => {
     const action = changeFilterBy('borderSize');
@@ -52,6 +53,11 @@ describe('gallery reducer', () => {
   it('should handle CHANGE_SORT_BY', () => {
     const action = changeSortBy('borderSize');
     const expectedState = { ...initialState, sortBy: 'borderSize' };
+    expect(reducer(initialState, action)).toStrictEqual(expectedState);
+  });
+  it('should handle CHANGE_SORT_DIRECTION', () => {
+    const action = changeSortDirection();
+    const expectedState = { ...initialState, sortDirection: 'ASC' };
     expect(reducer(initialState, action)).toStrictEqual(expectedState);
   });
 });

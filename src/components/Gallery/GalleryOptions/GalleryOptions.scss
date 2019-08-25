@@ -6,6 +6,11 @@
         display:inline-block;
         margin-left:1em;
     }
+    .sort {
+        button {
+            width:4.5em;
+        }
+    }
 }
 
 @media only screen and (max-width: $mobileSize) {
