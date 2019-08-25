@@ -11,10 +11,10 @@ import {
 
 export const initialState = {
   rects: [],
-  filterBy: '',
+  filterBy: 'size',
   sortBy: 'size',
-  filterMin: 10,
-  filterMax: 10000,
+  filterMin: NaN,
+  filterMax: NaN,
   sortDirection: 'DESC'
 };
 

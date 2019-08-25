@@ -1,4 +1,7 @@
-const filterRectsBy = (rects, filterBy, min = 0, max = Infinity) => {
+const filterRectsBy = (rects, filterBy, min, max) => {
+  if (!min && !max) {
+    return rects;
+  }
   let filteredRects;
   switch (filterBy) {
     case 'size':

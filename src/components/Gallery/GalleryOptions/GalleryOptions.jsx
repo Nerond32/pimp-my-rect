@@ -55,14 +55,14 @@ const GalleryOptions = ({
           id="min"
           name="min"
           label="Min"
-          value={filterMin.toString()}
+          value={filterMin ? filterMin.toString() : ''}
           onChange={event => changeMinFilterValue(Number(event.target.value))}
         />
         <TextInput
           id="max"
           name="max"
           label="Max"
-          value={filterMax.toString()}
+          value={filterMax ? filterMax.toString() : ''}
           onChange={event => changeMaxFilterValue(Number(event.target.value))}
         />
       </span>

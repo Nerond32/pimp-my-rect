@@ -2,7 +2,7 @@
 
 .text-input {
     display:inline-block;
-    margin:2em;
+    margin:1.5em;
     position:relative;
     label {
         color:$fontColorLight;
@@ -18,6 +18,6 @@
         color:$fontColorLight;
         flex:1;
         height:100%;
-        width:50px;
+        width:70px;
     }
 }
