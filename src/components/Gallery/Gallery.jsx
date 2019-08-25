@@ -12,19 +12,21 @@ import sortRectsBy from 'utils/sortRectsBy';
 import GalleryOptions from './GalleryOptions/GalleryOptions';
 import './Gallery.scss';
 
-const Gallery = ({
+export const Gallery = ({
   images,
   deleteImage,
   changeFilterBy,
   changeSortBy,
   filterBy,
-  sortBy
+  sortBy,
+  filterMin,
+  filterMax
 }) => {
   const sortedRects = sortRectsBy(images, sortBy);
   return (
     <div className="gallery">
       <h2>Your saved pimp&apos;d rects</h2>
-      <GalleryOptions />
+      <GalleryOptions onChange={changeSortBy} />
       <div className="gallery-container">
         {sortedRects.map(image => {
           const { id, borderSize, color, height, width } = image;
@@ -64,13 +66,17 @@ Gallery.propTypes = {
   changeFilterBy: PropTypes.func.isRequired,
   changeSortBy: PropTypes.func.isRequired,
   filterBy: PropTypes.string.isRequired,
-  sortBy: PropTypes.string.isRequired
+  sortBy: PropTypes.string.isRequired,
+  filterMin: PropTypes.number.isRequired,
+  filterMax: PropTypes.number.isRequired
 };
 
 const mapStateToProps = state => ({
   images: state.gallery.images,
   filterBy: state.gallery.filterBy,
-  sortBy: state.gallery.sortBy
+  sortBy: state.gallery.sortBy,
+  filterMin: state.gallery.filterMin,
+  filterMax: state.gallery.filterMax
 });
 
 const mapDispatchToProps = dispatch => ({

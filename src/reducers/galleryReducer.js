@@ -9,7 +9,9 @@ import {
 const initialState = {
   images: [],
   filterBy: '',
-  sortBy: 'size'
+  sortBy: 'size',
+  filterMin: 10,
+  filterMax: 10000
 };
 
 const galleryReducer = (state = initialState, action) => {

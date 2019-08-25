@@ -20,9 +20,18 @@ module.exports = {
     'no-unused-vars': 1,
     'no-shadow': 0,
     'babel/semi': 0,
+    'import/no-named-as-default': 0,
     'prettier/prettier': [2, { singleQuote: true, endOfLine: 'auto' }],
     'react-hooks/exhaustive-deps': 1
   },
+  overrides: [
+    {
+      files: ['*-test.js', '*.test.jsx'],
+      rules: {
+        'react/jsx-props-no-spreading': 0
+      }
+    }
+  ],
   settings: {
     'import/resolver': {
       node: {
