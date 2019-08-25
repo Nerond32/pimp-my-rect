@@ -1,7 +1,7 @@
 import React, { memo, useLayoutEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Rectangle = ({ borderSize, color, height, width }) => {
+const Rectangle = ({ borderSize, borderColor, color, height, width }) => {
   const realHeight = height + 2 * borderSize;
   const realWidth = width + 2 * borderSize;
   const rectRef = useRef();
@@ -22,15 +22,20 @@ const Rectangle = ({ borderSize, color, height, width }) => {
   }
   const rectStyle = {
     backgroundColor: `${color}`,
-    border: `${Math.ceil(borderSize * multiplier)}px solid black`,
+    border: `${Math.ceil(borderSize * multiplier)}px solid ${borderColor}`,
     height: `${Math.ceil(height * multiplier)}px`,
     width: `${Math.ceil(width * multiplier)}px`
   };
   return <div ref={rectRef} className="rectangle" style={rectStyle} />;
 };
 
+Rectangle.defaultProps = {
+  borderColor: '#000000'
+};
+
 Rectangle.propTypes = {
   borderSize: PropTypes.number.isRequired,
+  borderColor: PropTypes.string,
   color: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired

@@ -5,6 +5,7 @@ import Rectangle from 'components/generic/Rectangle/Rectangle';
 import { addImage } from 'actions/galleryActions';
 import {
   changeBorderSize,
+  changeBorderColor,
   changeColor,
   changeHeight,
   changeWidth
@@ -14,11 +15,13 @@ import Input from './Input/Input';
 
 const Editor = ({
   borderSize,
+  borderColor,
   color,
   height,
   width,
   addImage,
   changeBorderSize,
+  changeBorderColor,
   changeColor,
   changeHeight,
   changeWidth
@@ -28,11 +31,13 @@ const Editor = ({
       <div className="editor editor-input">
         <Input
           borderSize={borderSize}
+          borderColor={borderColor}
           color={color}
           height={height}
           width={width}
           addImage={addImage}
           changeBorderSize={changeBorderSize}
+          changeBorderColor={changeBorderColor}
           changeColor={changeColor}
           changeHeight={changeHeight}
           changeWidth={changeWidth}
@@ -41,6 +46,7 @@ const Editor = ({
       <div className="editor editor-preview">
         <Rectangle
           borderSize={borderSize}
+          borderColor={borderColor}
           color={color}
           height={height}
           width={width}
@@ -52,11 +58,13 @@ const Editor = ({
 
 Editor.propTypes = {
   borderSize: PropTypes.number.isRequired,
+  borderColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
   addImage: PropTypes.func.isRequired,
   changeBorderSize: PropTypes.func.isRequired,
+  changeBorderColor: PropTypes.func.isRequired,
   changeColor: PropTypes.func.isRequired,
   changeHeight: PropTypes.func.isRequired,
   changeWidth: PropTypes.func.isRequired
@@ -64,15 +72,17 @@ Editor.propTypes = {
 
 const mapStateToProps = state => ({
   borderSize: state.editor.borderSize,
+  borderColor: state.editor.borderColor,
   color: state.editor.color,
   height: state.editor.height,
   width: state.editor.width
 });
 
 const mapDispatchToProps = dispatch => ({
-  addImage: (borderSize, color, height, width) =>
-    dispatch(addImage(borderSize, color, height, width)),
+  addImage: (borderSize, borderColor, color, height, width) =>
+    dispatch(addImage(borderSize, borderColor, color, height, width)),
   changeBorderSize: borderSize => dispatch(changeBorderSize(borderSize)),
+  changeBorderColor: borderColor => dispatch(changeBorderColor(borderColor)),
   changeColor: color => dispatch(changeColor(color)),
   changeHeight: height => dispatch(changeHeight(height)),
   changeWidth: width => dispatch(changeWidth(width))

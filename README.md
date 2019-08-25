@@ -14,6 +14,7 @@
   - :heavy_check_mark: Editor should live-update the Output.
 - **Editor**: it should have a set of inputs to adjust Output’s:
   - :heavy_check_mark: background colour (colour picker)
+  - :heavy_plus_sign: border colour
   - :heavy_check_mark: size (input which you think is the most suitable here)
   - :heavy_check_mark: border radius (please use a range picker)
   - :heavy_check_mark: A save button

@@ -18,11 +18,13 @@ import './Input.scss';
 
 const Input = ({
   borderSize,
+  borderColor,
   color,
   height,
   width,
   addImage,
   changeBorderSize,
+  changeBorderColor,
   changeColor,
   changeHeight,
   changeWidth
@@ -32,9 +34,15 @@ const Input = ({
       className="editor-input-form"
       onSubmit={event => {
         event.preventDefault();
-        addImage(borderSize, color, height, width);
+        addImage(borderSize, borderColor, color, height, width);
       }}
     >
+      <ColorInput
+        displayName="Border color:"
+        name="borderColor"
+        value={borderColor}
+        onChangeHandler={changeBorderColor}
+      />
       <ColorInput
         displayName="Color:"
         name="color"
@@ -76,10 +84,12 @@ const Input = ({
 Input.propTypes = {
   borderSize: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
+  borderColor: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
   addImage: PropTypes.func.isRequired,
   changeBorderSize: PropTypes.func.isRequired,
+  changeBorderColor: PropTypes.func.isRequired,
   changeColor: PropTypes.func.isRequired,
   changeHeight: PropTypes.func.isRequired,
   changeWidth: PropTypes.func.isRequired

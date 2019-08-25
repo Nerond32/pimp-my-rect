@@ -20,11 +20,14 @@ export const initialState = {
 
 const galleryReducer = (state = initialState, action) => {
   if (action.type === ADD_IMAGE) {
-    const { borderSize, color, height, width } = action;
+    const { borderSize, borderColor, color, height, width } = action;
     const id = generateUniqueHash();
     return {
       ...state,
-      rects: [...state.rects, { id, borderSize, color, height, width }]
+      rects: [
+        ...state.rects,
+        { id, borderSize, borderColor, color, height, width }
+      ]
     };
   }
   if (action.type === DELETE_IMAGE) {

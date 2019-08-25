@@ -1,10 +1,15 @@
 export const CHANGE_BORDER_SIZE = 'CHANGE_BORDER_SIZE';
+export const CHANGE_BORDER_COLOR = 'CHANGE_BORDER_COLOR';
 export const CHANGE_COLOR = 'CHANGE_COLOR';
 export const CHANGE_HEIGHT = 'CHANGE_HEIGHT';
 export const CHANGE_WIDTH = 'CHANGE_WIDTH';
 
 export const changeBorderSize = borderSize => {
   return { type: CHANGE_BORDER_SIZE, borderSize };
+};
+
+export const changeBorderColor = borderColor => {
+  return { type: CHANGE_BORDER_COLOR, borderColor };
 };
 
 export const changeColor = color => {

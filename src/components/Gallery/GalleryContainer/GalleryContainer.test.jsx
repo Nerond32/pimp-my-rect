@@ -6,9 +6,8 @@ import GalleryContainer from './GalleryContainer';
 configure({ adapter: new Adapter() });
 
 describe('gallery', () => {
-  const mockFunction = () => {};
   const funcProps = {
-    deleteImage: mockFunction
+    deleteImage: jest.fn()
   };
   const filterSortProps = {
     filterBy: 'borderSize',

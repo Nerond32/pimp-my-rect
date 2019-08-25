@@ -6,7 +6,7 @@ import Rectangle from 'components/generic/Rectangle/Rectangle';
 import './GalleryItem.scss';
 
 export const GalleryItem = ({ rect, deleteImage }) => {
-  const { id, borderSize, color, height, width } = rect;
+  const { id, borderSize, borderColor, color, height, width } = rect;
   const [isBeingDeleted, setIsBeingDeleted] = useState(false);
   useEffect(() => {
     setIsBeingDeleted(true);
@@ -24,6 +24,7 @@ export const GalleryItem = ({ rect, deleteImage }) => {
         <div className="rect-container">
           <Rectangle
             borderSize={borderSize}
+            borderColor={borderColor}
             color={color}
             height={height}
             width={width}
@@ -48,6 +49,7 @@ GalleryItem.propTypes = {
   rect: PropTypes.shape({
     id: PropTypes.string.isRequired,
     borderSize: PropTypes.number.isRequired,
+    borderColor: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
     height: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired

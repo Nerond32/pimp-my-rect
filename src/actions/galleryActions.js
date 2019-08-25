@@ -6,8 +6,8 @@ export const CHANGE_SORT_DIRECTION = 'CHANGE_SORT_DIRECTION';
 export const CHANGE_MIN_FILTER_VALUE = 'CHANGE_MIN_FILTER_VALUE';
 export const CHANGE_MAX_FILTER_VALUE = 'CHANGE_MAX_FILTER_VALUE';
 
-export const addImage = (borderSize, color, height, width) => {
-  return { type: ADD_IMAGE, borderSize, color, height, width };
+export const addImage = (borderSize, borderColor, color, height, width) => {
+  return { type: ADD_IMAGE, borderSize, borderColor, color, height, width };
 };
 
 export const deleteImage = id => {

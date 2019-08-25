@@ -1,5 +1,6 @@
 import {
   changeBorderSize,
+  changeBorderColor,
   changeColor,
   changeHeight,
   changeWidth
@@ -16,6 +17,11 @@ describe('editor reducer', () => {
   it('should handle CHANGE_BORDER_SIZE', () => {
     const action = changeBorderSize(207);
     const expectedState = { ...initialState, borderSize: 207 };
+    expect(reducer(initialState, action)).toStrictEqual(expectedState);
+  });
+  it('should handle CHANGE_BORDER_COLOR', () => {
+    const action = changeBorderColor('#ff2300');
+    const expectedState = { ...initialState, borderColor: '#ff2300' };
     expect(reducer(initialState, action)).toStrictEqual(expectedState);
   });
   it('should handle CHANGE_COLOR', () => {
