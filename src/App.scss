@@ -46,16 +46,15 @@ html, body, #root, .app {
 }
 
 @media only screen and (max-width: $mobileSize) {
-.app {
-  grid:4em 1em 1fr 1em 1fr 1em 1fr / 1fr;
-  grid-template-areas:
-    "header"
-    "."
-    "input"
-    "."
-    "output"
-    "."
-    "gallery";
-}
-
+  .app {
+    grid:4em 1em 1fr 1em 1fr 1em 1fr / 1fr;
+    grid-template-areas:
+      "header"
+      "."
+      "input"
+      "."
+      "output"
+      "."
+      "gallery";
+  }
 }

@@ -1,0 +1,63 @@
+@import 'assets/variables.scss';
+
+.gallery-item-container {
+  border: 1px solid lighten($background,10%);
+  margin:0.5em;
+  padding: 1em;
+  position:relative;
+  button {
+    position:absolute;
+    right:-1em;
+    top:-1em;
+  }
+  .rect-size-label {
+    position:absolute;
+    left:0;
+    top:0;
+  }
+  .rect-container {
+    height:$galleryRectSize;
+    width:$galleryRectSize;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+}
+
+.gallery-item-transition-enter {
+  opacity: 0;
+  transform: translateY(-20%);
+}
+.gallery-item-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.gallery-item-transition-exit {
+  opacity: 1;
+}
+.gallery-item-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20%);
+  transition: opacity 300ms, transform 300ms;
+}
+
+@media only screen and (max-width: $mobileSize) {
+  .gallery-item-transition-enter {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  .gallery-item-transition-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .gallery-item-transition-exit {
+    opacity: 1;
+  }
+  .gallery-item-transition-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 300ms, transform 300ms;
+  }
+}

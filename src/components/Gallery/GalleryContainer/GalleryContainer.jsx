@@ -1,9 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'components/generic/Button/Button';
-import Rectangle from 'components/generic/Rectangle/Rectangle';
 import filterRectsBy from 'utils/filterRectsBy';
 import sortRectsBy from 'utils/sortRectsBy';
+import GalleryItem from './GalleryItem/GalleryItem';
 import './GalleryContainer.scss';
 
 export const GalleryContainer = ({
@@ -19,22 +18,10 @@ export const GalleryContainer = ({
   const sortedRects = sortRectsBy(filteredRects, sortBy, sortDirection);
   return (
     <div className="gallery-container">
-      {sortedRects.map(image => {
-        const { id, borderSize, color, height, width } = image;
+      {sortedRects.map(rect => {
         return (
-          <div className="gallery-item" key={id}>
-            <span className="size">
-              {2 * borderSize + image.width}x{2 * borderSize + image.height}
-            </span>
-            <div className="rect-container">
-              <Rectangle
-                borderSize={borderSize}
-                color={color}
-                height={height}
-                width={width}
-              />
-            </div>
-            <Button onClick={() => deleteImage(id)}>X</Button>
+          <div className="gallery-item" key={rect.id}>
+            <GalleryItem rect={rect} deleteImage={deleteImage} />
           </div>
         );
       })}
