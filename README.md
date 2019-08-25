@@ -25,6 +25,7 @@
   - :heavy_check_mark: [optional but very welcome] filtering options
   - :heavy_check_mark: [optional but very welcome] sorting options
 - :heavy_check_mark: :wavy_dash: `Looks good and is responsive, couldn't test mobile Safari due to lack of a device supporting it, but according to chrome dev tools it should scale well even on iPhone 5/SE size` It should work well in the newest browsers (mobile Chrome and Safari included!).
+- :heavy_plus_sign: Supporting ultrawide and large screens
 - :heavy_check_mark: The whole thing should be split into modules (preferably with CommonJS or ES6 syntax but AMD is also fine).
 
 ### Other notes
