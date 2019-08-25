@@ -28,7 +28,10 @@ export const Gallery = ({
   return (
     <div className="gallery">
       <h2>Your saved pimp&apos;d rects</h2>
-      <GalleryOptions onChange={changeSortBy} />
+      <GalleryOptions
+        changeFilterBy={changeFilterBy}
+        changeSortBy={changeSortBy}
+      />
       <div className="gallery-container">
         {sortedRects.map(image => {
           const { id, borderSize, color, height, width } = image;

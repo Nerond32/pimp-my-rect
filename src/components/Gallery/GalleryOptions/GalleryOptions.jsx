@@ -1,9 +1,10 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import { filteringOptions, sortingOptions } from 'assets/constants';
 import TextInput from 'components/generic/Input/TextInput/TextInput';
 import './GalleryOptions.scss';
 
-const GalleryOptions = ({ onChange }) => {
+const GalleryOptions = ({ changeFilterBy, changeSortBy }) => {
   return (
     <form className="gallery-options-form">
       <div className="sort">
@@ -11,10 +12,11 @@ const GalleryOptions = ({ onChange }) => {
         <select
           defaultValue="size"
           name="sort"
-          onChange={event => onChange(event.target.value)}
+          onChange={event => changeSortBy(event.target.value)}
         >
-          <option value="size">Size</option>
-          <option value="borderSize">Border size</option>
+          {sortingOptions.map(option => {
+            return <option value={option.value}>{option.displayName}</option>;
+          })}
         </select>
       </div>
       <div className="filter">
@@ -22,10 +24,11 @@ const GalleryOptions = ({ onChange }) => {
         <select
           defaultValue="filter"
           name="filter"
-          onChange={event => onChange(event.target.value)}
+          onChange={event => changeFilterBy(event.target.value)}
         >
-          <option value="size">Size</option>
-          <option value="borderSize">Border size</option>
+          {filteringOptions.map(option => {
+            return <option value={option.value}>{option.displayName}</option>;
+          })}
         </select>
       </div>
       <span className="filter-inputs">
@@ -49,7 +52,8 @@ const GalleryOptions = ({ onChange }) => {
 };
 
 GalleryOptions.propTypes = {
-  onChange: PropTypes.func.isRequired
+  changeFilterBy: PropTypes.func.isRequired,
+  changeSortBy: PropTypes.func.isRequired
 };
 
 export default memo(GalleryOptions);
