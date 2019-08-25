@@ -51,13 +51,13 @@ describe('gallery', () => {
         {...funcProps}
         filterMin={4}
         filterMax={115}
-        filterBy="border size"
+        filterBy="borderSize"
         sortBy="size"
       />
     );
     const galleryFiltered7 = shallow(
       <Gallery
-        images={rects3}
+        images={rects7}
         {...funcProps}
         filterMin={0}
         filterMax={2800000}
@@ -66,6 +66,6 @@ describe('gallery', () => {
       />
     );
     expect(galleryFiltered3.find('.gallery-item')).toHaveLength(2);
-    expect(galleryFiltered7.find('.gallery-item')).toHaveLength(3);
+    expect(galleryFiltered7.find('.gallery-item')).toHaveLength(4);
   });
 });

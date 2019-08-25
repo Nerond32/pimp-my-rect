@@ -8,6 +8,7 @@ import {
 } from 'actions/galleryActions';
 import Button from 'components/generic/Button/Button';
 import Rectangle from 'components/generic/Rectangle/Rectangle';
+import filterRectsBy from 'utils/filterRectsBy';
 import sortRectsBy from 'utils/sortRectsBy';
 import GalleryOptions from './GalleryOptions/GalleryOptions';
 import './Gallery.scss';
@@ -22,7 +23,8 @@ export const Gallery = ({
   filterMin,
   filterMax
 }) => {
-  const sortedRects = sortRectsBy(images, sortBy);
+  const filteredRects = filterRectsBy(images, filterBy, filterMin, filterMax);
+  const sortedRects = sortRectsBy(filteredRects, sortBy);
   return (
     <div className="gallery">
       <h2>Your saved pimp&apos;d rects</h2>

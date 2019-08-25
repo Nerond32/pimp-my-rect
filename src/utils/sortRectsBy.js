@@ -14,6 +14,16 @@ const sortRectsBy = (rects, sortBy) => {
         a.borderSize > b.borderSize ? 1 : -1
       );
       break;
+    case 'width':
+      sortedRects = rects.sort((a, b) =>
+        2 * a.borderSize + a.width > 2 * b.borderSize + b.width ? 1 : -1
+      );
+      break;
+    case 'height':
+      sortedRects = rects.sort((a, b) =>
+        2 * a.borderSize + a.height > 2 * b.borderSize + b.height ? 1 : -1
+      );
+      break;
     default:
       sortedRects = rects;
   }
