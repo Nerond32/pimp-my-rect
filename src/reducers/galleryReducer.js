@@ -13,8 +13,8 @@ export const initialState = {
   rects: [],
   filterBy: 'size',
   sortBy: 'size',
-  filterMin: NaN,
-  filterMax: NaN,
+  filterMin: 0,
+  filterMax: 0,
   sortDirection: 'DESC'
 };
 
