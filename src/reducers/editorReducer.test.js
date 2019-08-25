@@ -4,14 +4,7 @@ import {
   changeHeight,
   changeWidth
 } from 'actions/editorActions';
-import reducer from './editorReducer';
-
-const initialState = {
-  borderSize: 5,
-  color: '#ff0000',
-  height: 200,
-  width: 200
-};
+import reducer, { initialState } from './editorReducer';
 
 describe('editor reducer', () => {
   it('should return the initial state', () => {

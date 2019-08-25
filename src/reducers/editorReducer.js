@@ -5,7 +5,7 @@ import {
   CHANGE_WIDTH
 } from 'actions/editorActions';
 
-const initialState = {
+export const initialState = {
   borderSize: 5,
   color: '#ff0000',
   height: 200,

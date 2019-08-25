@@ -1,5 +1,16 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import {
+  minHeight,
+  maxHeight,
+  stepHeight,
+  minWidth,
+  maxWidth,
+  stepWidth,
+  minBorderSize,
+  maxBorderSize,
+  borderStep
+} from 'assets/constants';
 import Button from 'components/generic/Button/Button';
 import ColorInput from 'components/generic/Input/ColorInput/ColorInput';
 import RangeInput from 'components/generic/Input/RangeInput/RangeInput';
@@ -31,26 +42,27 @@ const Input = ({
         onChangeHandler={changeColor}
       />
       <RangeInput
-        min={10}
-        max={10000}
-        step={5}
+        min={minHeight}
+        max={maxHeight}
+        step={stepHeight}
         displayName="Height:"
         name="rectHeight"
         value={height}
         onChangeHandler={changeHeight}
       />
       <RangeInput
-        min={10}
-        max={10000}
-        step={5}
+        min={minWidth}
+        max={maxWidth}
+        step={stepWidth}
         displayName="Width:"
         name="rectWidth"
         value={width}
         onChangeHandler={changeWidth}
       />
       <RangeInput
-        min={0}
-        max={1000}
+        min={minBorderSize}
+        max={maxBorderSize}
+        step={borderStep}
         displayName="Border size:"
         name="rectBorder"
         value={borderSize}

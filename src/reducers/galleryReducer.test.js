@@ -4,15 +4,7 @@ import {
   changeFilterBy,
   changeSortBy
 } from 'actions/galleryActions';
-import reducer from './galleryReducer';
-
-const initialState = {
-  images: [],
-  filterBy: '',
-  sortBy: 'size',
-  filterMin: 10,
-  filterMax: 10000
-};
+import reducer, { initialState } from './galleryReducer';
 
 describe('gallery reducer', () => {
   it('should return the initial state', () => {

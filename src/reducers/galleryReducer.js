@@ -6,7 +6,7 @@ import {
   CHANGE_SORT_BY
 } from 'actions/galleryActions';
 
-const initialState = {
+export const initialState = {
   images: [],
   filterBy: '',
   sortBy: 'size',
