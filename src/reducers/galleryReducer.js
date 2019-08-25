@@ -4,7 +4,9 @@ import {
   DELETE_IMAGE,
   CHANGE_FILTER_BY,
   CHANGE_SORT_BY,
-  CHANGE_SORT_DIRECTION
+  CHANGE_SORT_DIRECTION,
+  CHANGE_MIN_FILTER_VALUE,
+  CHANGE_MAX_FILTER_VALUE
 } from 'actions/galleryActions';
 
 export const initialState = {
@@ -56,6 +58,20 @@ const galleryReducer = (state = initialState, action) => {
     return {
       ...state,
       sortDirection
+    };
+  }
+  if (action.type === CHANGE_MIN_FILTER_VALUE) {
+    const { filterMin } = action;
+    return {
+      ...state,
+      filterMin
+    };
+  }
+  if (action.type === CHANGE_MAX_FILTER_VALUE) {
+    const { filterMax } = action;
+    return {
+      ...state,
+      filterMax
     };
   }
   return state;

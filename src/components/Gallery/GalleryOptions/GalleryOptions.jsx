@@ -9,6 +9,10 @@ const GalleryOptions = ({
   changeFilterBy,
   changeSortBy,
   changeSortDirection,
+  changeMinFilterValue,
+  changeMaxFilterValue,
+  filterMin,
+  filterMax,
   sortDirection
 }) => {
   return (
@@ -51,15 +55,15 @@ const GalleryOptions = ({
           id="min"
           name="min"
           label="Min"
-          value="0"
-          onChange={() => {}}
+          value={filterMin.toString()}
+          onChange={event => changeMinFilterValue(event.target.value)}
         />
         <TextInput
           id="max"
           name="max"
           label="Max"
-          value="100"
-          onChange={() => {}}
+          value={filterMax.toString()}
+          onChange={event => changeMaxFilterValue(event.target.value)}
         />
       </span>
     </form>
@@ -70,6 +74,10 @@ GalleryOptions.propTypes = {
   changeFilterBy: PropTypes.func.isRequired,
   changeSortBy: PropTypes.func.isRequired,
   changeSortDirection: PropTypes.func.isRequired,
+  changeMinFilterValue: PropTypes.func.isRequired,
+  changeMaxFilterValue: PropTypes.func.isRequired,
+  filterMin: PropTypes.number.isRequired,
+  filterMax: PropTypes.number.isRequired,
   sortDirection: PropTypes.string.isRequired
 };
 

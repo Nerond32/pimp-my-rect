@@ -11,7 +11,9 @@ describe('gallery', () => {
     deleteImage: mockFunction,
     changeFilterBy: mockFunction,
     changeSortBy: mockFunction,
-    changeSortDirection: mockFunction
+    changeSortDirection: mockFunction,
+    changeMinFilterValue: mockFunction,
+    changeMaxFilterValue: mockFunction
   };
   const filterSortProps = {
     filterBy: 'borderSize',

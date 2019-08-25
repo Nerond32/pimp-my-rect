@@ -3,7 +3,9 @@ import {
   deleteImage,
   changeFilterBy,
   changeSortBy,
-  changeSortDirection
+  changeSortDirection,
+  changeMinFilterValue,
+  changeMaxFilterValue
 } from 'actions/galleryActions';
 import reducer, { initialState } from './galleryReducer';
 
@@ -58,6 +60,16 @@ describe('gallery reducer', () => {
   it('should handle CHANGE_SORT_DIRECTION', () => {
     const action = changeSortDirection();
     const expectedState = { ...initialState, sortDirection: 'ASC' };
+    expect(reducer(initialState, action)).toStrictEqual(expectedState);
+  });
+  it('should handle CHANGE_MIN_FILTER_VALUE', () => {
+    const action = changeMinFilterValue(412);
+    const expectedState = { ...initialState, filterMin: 412 };
+    expect(reducer(initialState, action)).toStrictEqual(expectedState);
+  });
+  it('should handle CHANGE_MAX_FILTER_VALUE', () => {
+    const action = changeMaxFilterValue(8134);
+    const expectedState = { ...initialState, filterMax: 8134 };
     expect(reducer(initialState, action)).toStrictEqual(expectedState);
   });
 });

@@ -5,7 +5,9 @@ import {
   deleteImage,
   changeFilterBy,
   changeSortBy,
-  changeSortDirection
+  changeSortDirection,
+  changeMinFilterValue,
+  changeMaxFilterValue
 } from 'actions/galleryActions';
 import Button from 'components/generic/Button/Button';
 import Rectangle from 'components/generic/Rectangle/Rectangle';
@@ -20,6 +22,8 @@ export const Gallery = ({
   changeFilterBy,
   changeSortBy,
   changeSortDirection,
+  changeMinFilterValue,
+  changeMaxFilterValue,
   filterBy,
   sortBy,
   sortDirection,
@@ -35,6 +39,10 @@ export const Gallery = ({
         changeFilterBy={changeFilterBy}
         changeSortBy={changeSortBy}
         changeSortDirection={changeSortDirection}
+        changeMinFilterValue={changeMinFilterValue}
+        changeMaxFilterValue={changeMaxFilterValue}
+        filterMin={filterMin}
+        filterMax={filterMax}
         sortDirection={sortDirection}
       />
       <div className="gallery-container">
@@ -76,6 +84,8 @@ Gallery.propTypes = {
   changeFilterBy: PropTypes.func.isRequired,
   changeSortBy: PropTypes.func.isRequired,
   changeSortDirection: PropTypes.func.isRequired,
+  changeMinFilterValue: PropTypes.func.isRequired,
+  changeMaxFilterValue: PropTypes.func.isRequired,
   filterBy: PropTypes.string.isRequired,
   sortBy: PropTypes.string.isRequired,
   sortDirection: PropTypes.string.isRequired,
@@ -96,7 +106,9 @@ const mapDispatchToProps = dispatch => ({
   deleteImage: id => dispatch(deleteImage(id)),
   changeFilterBy: filterBy => dispatch(changeFilterBy(filterBy)),
   changeSortBy: sortBy => dispatch(changeSortBy(sortBy)),
-  changeSortDirection: () => dispatch(changeSortDirection())
+  changeSortDirection: () => dispatch(changeSortDirection()),
+  changeMinFilterValue: filterMin => dispatch(changeMinFilterValue(filterMin)),
+  changeMaxFilterValue: filterMax => dispatch(changeMaxFilterValue(filterMax))
 });
 
 export default connect(
