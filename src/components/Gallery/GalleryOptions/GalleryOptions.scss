@@ -1,29 +1,28 @@
 @import 'assets/variables.scss';
 
 .gallery-options-form {
-    display:inline-block;
-    .filter, .sort {
-        display:inline-block;
-        margin-left:1em;
+  display: inline-block;
+  .filter,
+  .sort {
+    display: inline-block;
+    margin-left: 1em;
+  }
+  .sort {
+    button {
+      width: 4.5em;
     }
+  }
+  @media only screen and (max-width: $mobileSize) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .filter,
     .sort {
-        button {
-            width:4.5em;
-        }
+      display: block;
+      margin-top: 1em;
     }
-}
-
-@media only screen and (max-width: $mobileSize) {
-    .gallery-options-form {
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        .filter, .sort {
-            display:block;
-            margin-top:1em;
-        }
-        .filter > .filter-inputs {
-            display:block;
-        }
+    .filter > .filter-inputs {
+      display: block;
     }
+  }
 }

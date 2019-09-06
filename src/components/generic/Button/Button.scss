@@ -1,8 +1,8 @@
 @import 'assets/variables.scss';
 
-button {
+button.pmr-button {
     background:$primary;
-    border:1px solid $primary;
+    border:none;
     border-radius:2px;
     color:$fontColor;
     font-size:0.8rem;
@@ -13,8 +13,7 @@ button {
     svg {
         color:$fontColor;
     }
-}
-
-.button-no-border {
-    border:none;
+    &.button-with-border {
+        border:1px solid $secondary;
+    }
 }

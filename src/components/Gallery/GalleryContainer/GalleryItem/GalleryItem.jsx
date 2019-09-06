@@ -31,6 +31,7 @@ export const GalleryItem = ({ rect, deleteImage }) => {
           />{' '}
         </div>
         <Button
+          classNames="delete-item-button"
           onClick={() => {
             setIsBeingDeleted(false);
             setTimeout(() => {

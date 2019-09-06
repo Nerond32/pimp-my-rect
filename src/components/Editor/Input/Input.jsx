@@ -76,7 +76,9 @@ const Input = ({
         value={borderSize}
         onChangeHandler={changeBorderSize}
       />
-      <Button type="submit">Save</Button>
+      <Button classNames="save-button" type="submit">
+        Save
+      </Button>
     </form>
   );
 };

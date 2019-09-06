@@ -3,8 +3,8 @@ import './Header.scss';
 
 const Header = () => {
   return (
-    <header>
-      <div className="header-text">
+    <header className="pmr-main-header">
+      <div className="pmr-main-header-text">
         <h1>Pimp my Rect</h1>
         <h2>DELUXE EDITION</h2>
       </div>

@@ -1,71 +1,58 @@
 @import 'assets/variables.scss';
 
-html, body, #root, .app {
-  background-color:$background;
-  color:$fontColor;
-  font-family:'Verdana';
+html,
+body,
+#root,
+.app {
+  background-color: $background;
+  color: $fontColor;
+  font-family: 'Verdana';
   font-size: 16px;
-  height:100vh;
-  margin:0 auto;
-  padding:0;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .app {
-  display:grid;
-  grid:5em 1em 4fr 1em 2fr / 1fr 1em 2fr;
+  display: grid;
+  grid: 5em 1em 4fr 1em 2fr / 1fr 1em 2fr;
   grid-template-areas:
-    "header . gallery"
-    ". . gallery"
-    "output . gallery"
-    ". . gallery"
-    "input . gallery";
-  padding: 0;
-  .editor {
-    display:flex;
-    align-content:center;
-    align-items:center;
-    justify-content:center;
-  }
+    'header . gallery'
+    '. . gallery'
+    'output . gallery'
+    '. . gallery'
+    'input . gallery';
+  overflow-y: auto;
   .editor-input {
-    grid-area:input;
+    grid-area: input;
   }
   .editor-preview {
-    grid-area:output;
-    min-height:$galleryRectSize;
-    min-width:$galleryRectSize;
-    padding:0.8em;
+    grid-area: output;
   }
   .gallery {
-    grid-area:gallery;
+    grid-area: gallery;
   }
-  header{
-    grid-area:header;
+  .pmr-main-header {
+    grid-area: header;
   }
-  overflow-y:auto; 
-}
-
-@media only screen and (max-width: $desktopSize) {
-  .app {
-    grid:5em 1em 4fr 1em 2fr / minmax(360px,500px) 1em 3fr;
+  @media only screen and (max-width: $desktopSize) {
+    grid: 5em 1em 4fr 1em 2fr / minmax(360px, 1fr) 1em 3fr;
     grid-template-areas:
-      "header . output"
-      ". . output"
-      "input . output"
-      ". . ."
-      "gallery gallery gallery";
+      'header . output'
+      '. . output'
+      'input . output'
+      '. . .'
+      'gallery gallery gallery';
   }
-}
-
-@media only screen and (max-width: $mobileSize) {
-  .app {
-    grid:4em 1em 1fr 1em 1fr 1em 1fr / 1fr;
+  @media only screen and (max-width: $mobileSize) {
+    grid: 4em 1em 1fr 1em 1fr 1em 1fr / 1fr;
     grid-template-areas:
-      "header"
-      "."
-      "output"
-      "."
-      "input"
-      "."
-      "gallery";
+      'header'
+      '.'
+      'output'
+      '.'
+      'input'
+      '.'
+      'gallery';
   }
 }

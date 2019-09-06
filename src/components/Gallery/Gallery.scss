@@ -1,19 +1,17 @@
 @import 'assets/variables.scss';
 
 .gallery {
-    overflow-y:auto;
-    h2 {
-        border-bottom: 2px solid $primary;
-        border-bottom-left-radius:20%;
-        display:inline-block;
-        font-size:1.2em;
-        margin: 1em 2em 1em 3em;
-        padding:0.4em;
-    }
-}
-
-@media only screen and (max-width: $mobileSize) {
-    .gallery {
-        overflow-y:visible;
-    }
+  overflow-y: auto;
+  h2 {
+    border-bottom: 2px solid $primary;
+    border-bottom-left-radius: 20%;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 1em 2em 1em 3em;
+    padding: 0.4em;
+  }
+  @media only screen and (max-width: $mobileSize),
+    (orientation: landscape) and (max-height: $mobileSize) {
+    overflow-y: visible;
+  }
 }

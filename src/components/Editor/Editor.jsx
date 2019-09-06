@@ -10,6 +10,7 @@ import {
   changeHeight,
   changeWidth
 } from 'actions/editorActions';
+import './Editor.scss';
 
 import Input from './Input/Input';
 
