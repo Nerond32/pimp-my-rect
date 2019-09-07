@@ -1,6 +1,14 @@
-@mixin center-content {
+@mixin center-horizontally {
   display: flex;
-  align-content: center;
-  align-items: center;
   justify-content: center;
+}
+
+@mixin center-vertically {
+  display: flex;
+  align-items: center;
+}
+
+@mixin center-content {
+  @include center-horizontally;
+  @include center-vertically;
 }

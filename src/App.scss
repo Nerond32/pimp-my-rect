@@ -1,5 +1,34 @@
 @import 'assets/variables.scss';
 
+@mixin smallMobileLayout {
+  grid-template-areas:
+    'header'
+    '.'
+    'output'
+    '.'
+    'input'
+    '.'
+    'gallery';
+}
+
+@mixin largeMobileLayout {
+  grid-template-areas:
+    'input . header'
+    'input . .'
+    'input . output'
+    '. . .'
+    'gallery gallery gallery';
+}
+
+@mixin desktopLayout {
+  grid-template-areas:
+    'header . gallery'
+    '. . gallery'
+    'output . gallery'
+    '. . gallery'
+    'input . gallery';
+}
+
 html,
 body,
 #root,
@@ -14,15 +43,6 @@ body,
 }
 
 .app {
-  display: grid;
-  grid: 5em 1em 4fr 1em 2fr / 1fr 1em 2fr;
-  grid-template-areas:
-    'header . gallery'
-    '. . gallery'
-    'output . gallery'
-    '. . gallery'
-    'input . gallery';
-  overflow-y: auto;
   .editor-input {
     grid-area: input;
   }
@@ -35,24 +55,19 @@ body,
   .pmr-main-header {
     grid-area: header;
   }
-  @media only screen and (max-width: $desktopSize) {
-    grid: 5em 1em 4fr 1em 2fr / minmax(360px, 1fr) 1em 3fr;
-    grid-template-areas:
-      'header . output'
-      '. . output'
-      'input . output'
-      '. . .'
-      'gallery gallery gallery';
-  }
+  display: grid;
+  grid: 4em 1em 1fr 1em 1fr / minmax($editorWidth, 1fr) 1em 2fr;
+  @include desktopLayout;
   @media only screen and (max-width: $mobileSize) {
     grid: 4em 1em 1fr 1em 1fr 1em 1fr / 1fr;
-    grid-template-areas:
-      'header'
-      '.'
-      'output'
-      '.'
-      'input'
-      '.'
-      'gallery';
+    @include smallMobileLayout;
+  }
+  @media only screen and (min-width: $minLandscapeViewWidth) and (max-width: $tabletSize) and (orientation: landscape) {
+    grid: 4em 1em minmax(calc(100vh - 6em), 1fr) 1em 1fr / 1fr 1em 1fr;
+    @include largeMobileLayout;
+  }
+  @media only screen and (min-width: $minLandscapeViewWidth) and (max-width: $tabletSize) and (orientation: portrait) {
+    grid: 4em 1em 1fr 1em 1fr / 1fr 1em 1fr;
+    @include largeMobileLayout;
   }
 }

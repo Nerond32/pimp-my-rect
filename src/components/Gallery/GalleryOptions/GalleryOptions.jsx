@@ -50,7 +50,7 @@ const GalleryOptions = ({
           })}
         </select>
       </div>
-      <span className="filter-inputs">
+      <div className="filter-inputs">
         <TextInput
           id="min"
           name="min"
@@ -65,7 +65,7 @@ const GalleryOptions = ({
           value={filterMax ? filterMax.toString() : ''}
           onChange={event => changeMaxFilterValue(Number(event.target.value))}
         />
-      </span>
+      </div>
     </form>
   );
 };

@@ -33,7 +33,7 @@ const Gallery = ({
   const sortedRects = sortRectsBy(filteredRects, sortBy, sortDirection);
   return (
     <div className="gallery">
-      <h2>Your saved pimp&apos;d rects</h2>
+      <h2>Your pimp&apos;d rects</h2>
       <GalleryOptions
         changeFilterBy={changeFilterBy}
         changeSortBy={changeSortBy}

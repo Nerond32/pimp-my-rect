@@ -1,9 +1,11 @@
-$background:#222222;
-$primary:#cc7422;
-$secondary:#4432bb;
+$background: #222222;
+$primary: #cc7422;
+$secondary: #4432bb;
 $fontColor: #f8f5f5;
 $fontColorLight: lighten($fontColor, 10%);
 
 $galleryRectSize: 200px;
-$mobileSize: 600px;
-$desktopSize: 1920px;
+$editorWidth: 360px;
+$minLandscapeViewWidth: calc(1em + #{$editorWidth + $galleryRectSize});
+$mobileSize: 767px;
+$tabletSize: 1023px;
