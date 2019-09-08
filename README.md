@@ -25,7 +25,6 @@
   - :heavy_check_mark: [optional but very welcome] filtering options
   - :heavy_check_mark: [optional but very welcome] sorting options
 - :heavy_check_mark: :wavy_dash: `Looks good and is responsive, couldn't test mobile Safari due to lack of a device supporting it, but according to chrome dev tools it should scale well even on iPhone 5/SE size` It should work well in the newest browsers (mobile Chrome and Safari included!).
-- :heavy_plus_sign: Supporting ultrawide and large screens
 - :heavy_check_mark: The whole thing should be split into modules (preferably with CommonJS or ES6 syntax but AMD is also fine).
 - :heavy_plus_sign: Put in some testing effort, according to Jest ~79% coverage. Not great, not terrible.
 
@@ -44,16 +43,14 @@
 
 #### Landscape
 
+![mobile-small-landscape](/readme/mobile_small_landscape.png)
 ![mobile-large-landscape](/readme/mobile_large_landscape.png)
 
 ### Tablet
 
-![tablet](/readme/tablet.png)
+![tablet-portrait](/readme/tablet_portrait.png)
+![tablet-landscape](/readme/landscape.png)
 
 ### Desktop
 
 ![desktop](/readme/desktop.png)
-
-### Desktop(large/ultrawide)
-
-![desktop-large](/readme/desktop_large.png)
