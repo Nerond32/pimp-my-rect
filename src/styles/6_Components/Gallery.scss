@@ -1,17 +1,16 @@
 .gallery {
-  overflow-y: auto;
+  @include center-horizontally;
+  flex-wrap: wrap;
+  align-self: flex-start;
   h2 {
+    align-self: center;
     border-bottom: 2px solid $primary-color;
     border-bottom-left-radius: 20%;
-    display: inline-block;
     font-size: 1.2em;
     margin: 1em;
     padding: 0.4em;
   }
-  @media only screen and (max-width: $tablet-size) {
-    overflow-y: visible;
-    @include center-vertically;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  @media only screen and (min-width: $tablet-size) {
+    overflow-y: auto;
   }
 }

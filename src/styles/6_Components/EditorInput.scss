@@ -1,10 +1,16 @@
-@media only screen and (max-width: $mobile-size) {
-  .editor-input-form {
-    position: relative;
+.editor-input-form {
+  position: relative;
+  .save-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  @media only screen and (min-width: $tablet-size) {
+    position: static;
     .save-button {
-      position: absolute;
-      top: 0;
-      right: 0;
+      position: static;
+      top: auto;
+      right: auto;
     }
   }
 }
