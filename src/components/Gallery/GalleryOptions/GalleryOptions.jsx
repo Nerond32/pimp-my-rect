@@ -35,11 +35,7 @@ const GalleryOptions = ({
       </div>
       <div className="options-form__filter">
         Filter by{' '}
-        <select
-          defaultValue="filterBy"
-          name="filterBy"
-          onChange={changeGalleryOptions}
-        >
+        <select defaultValue="filterBy" name="filterBy" onChange={updateField}>
           {filteringOptions.map(option => {
             return (
               <option key={option.value} value={option.value}>
