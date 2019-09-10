@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TextInput.scss';
 
-const TextInput = ({ fullWidth, label, id, name, onChange, value }) => {
+const TextInput = ({ fullWidth, label, id, name, onChangeHandler, value }) => {
   return (
     <div className={`text-input ${fullWidth ? 'text-input-full-width' : ''}`}>
       {label && <label htmlFor={name}>{label}</label>}
@@ -10,7 +10,7 @@ const TextInput = ({ fullWidth, label, id, name, onChange, value }) => {
         type="text"
         id={id}
         name={name}
-        onChange={onChange}
+        onChange={event => onChangeHandler(event)}
         value={value}
       />
     </div>
@@ -27,7 +27,7 @@ TextInput.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onChangeHandler: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired
 };
 

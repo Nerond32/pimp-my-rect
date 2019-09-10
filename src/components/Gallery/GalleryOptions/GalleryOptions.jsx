@@ -6,24 +6,24 @@ import TextInput from 'components/generic/Input/TextInput/TextInput';
 import './GalleryOptions.scss';
 
 const GalleryOptions = ({
-  changeFilterBy,
-  changeSortBy,
-  changeSortDirection,
-  changeMinFilterValue,
-  changeMaxFilterValue,
+  changeGalleryOptions,
   filterMin,
   filterMax,
   sortDirection
 }) => {
+  const changeSortDirection = () =>
+    changeGalleryOptions({
+      sortDirection: sortDirection === 'ASC' ? 'DESC' : 'ASC'
+    });
+  const updateField = ({ target: { name, value } }) =>
+    changeGalleryOptions({ [name]: value });
+  const updateNumericField = ({ target: { name, value } }) =>
+    changeGalleryOptions({ [name]: Number(value) });
   return (
     <form className="gallery-options-form">
       <div className="sort">
         Sort by{' '}
-        <select
-          defaultValue="size"
-          name="sort"
-          onChange={event => changeSortBy(event.target.value)}
-        >
+        <select defaultValue="size" name="sortBy" onChange={updateField}>
           {sortingOptions.map(option => {
             return (
               <option key={option.value} value={option.value}>
@@ -32,14 +32,14 @@ const GalleryOptions = ({
             );
           })}
         </select>
-        <Button onClick={() => changeSortDirection()}>{sortDirection}</Button>
+        <Button onClick={changeSortDirection}>{sortDirection}</Button>
       </div>
       <div className="filter">
         Filter by{' '}
         <select
-          defaultValue="filter"
-          name="filter"
-          onChange={event => changeFilterBy(event.target.value)}
+          defaultValue="filterBy"
+          name="filterBy"
+          onChange={changeGalleryOptions}
         >
           {filteringOptions.map(option => {
             return (
@@ -52,18 +52,18 @@ const GalleryOptions = ({
       </div>
       <div className="filter-inputs">
         <TextInput
-          id="min"
-          name="min"
+          id="filterMin"
+          name="filterMin"
           label="Min"
           value={filterMin ? filterMin.toString() : ''}
-          onChange={event => changeMinFilterValue(Number(event.target.value))}
+          onChangeHandler={updateNumericField}
         />
         <TextInput
-          id="max"
-          name="max"
+          id="filterMax"
+          name="filterMax"
           label="Max"
           value={filterMax ? filterMax.toString() : ''}
-          onChange={event => changeMaxFilterValue(Number(event.target.value))}
+          onChangeHandler={updateNumericField}
         />
       </div>
     </form>
@@ -71,11 +71,7 @@ const GalleryOptions = ({
 };
 
 GalleryOptions.propTypes = {
-  changeFilterBy: PropTypes.func.isRequired,
-  changeSortBy: PropTypes.func.isRequired,
-  changeSortDirection: PropTypes.func.isRequired,
-  changeMinFilterValue: PropTypes.func.isRequired,
-  changeMaxFilterValue: PropTypes.func.isRequired,
+  changeGalleryOptions: PropTypes.func.isRequired,
   filterMin: PropTypes.number.isRequired,
   filterMax: PropTypes.number.isRequired,
   sortDirection: PropTypes.string.isRequired

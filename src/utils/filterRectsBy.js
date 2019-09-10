@@ -2,14 +2,8 @@ const filterRectsBy = (rects, filterBy, filterMin, filterMax) => {
   if (!filterMin && !filterMax) {
     return rects;
   }
-  let min = filterMin;
-  let max = filterMax;
-  if (!min) {
-    min = 0;
-  }
-  if (!max) {
-    max = Infinity;
-  }
+  const min = filterMin || 0;
+  const max = filterMax || Infinity;
   let filteredRects;
   switch (filterBy) {
     case 'size':

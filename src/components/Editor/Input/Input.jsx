@@ -34,7 +34,7 @@ const Input = ({
       className="editor-input-form"
       onSubmit={event => {
         event.preventDefault();
-        addImage(borderSize, borderColor, color, height, width);
+        addImage({ borderSize, borderColor, color, height, width });
       }}
     >
       <ColorInput

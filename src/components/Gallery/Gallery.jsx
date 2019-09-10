@@ -1,14 +1,7 @@
 import React, { memo } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {
-  deleteImage,
-  changeFilterBy,
-  changeSortBy,
-  changeSortDirection,
-  changeMinFilterValue,
-  changeMaxFilterValue
-} from 'actions/galleryActions';
+import { deleteImage, changeGalleryOptions } from 'actions/galleryActions';
 import filterRectsBy from 'utils/filterRectsBy';
 import sortRectsBy from 'utils/sortRectsBy';
 import GalleryContainer from './GalleryContainer/GalleryContainer';
@@ -18,11 +11,7 @@ import './Gallery.scss';
 const Gallery = ({
   rects,
   deleteImage,
-  changeFilterBy,
-  changeSortBy,
-  changeSortDirection,
-  changeMinFilterValue,
-  changeMaxFilterValue,
+  changeGalleryOptions,
   filterBy,
   sortBy,
   sortDirection,
@@ -35,11 +24,7 @@ const Gallery = ({
     <div className="gallery">
       <h2>Your pimp&apos;d rects</h2>
       <GalleryOptions
-        changeFilterBy={changeFilterBy}
-        changeSortBy={changeSortBy}
-        changeSortDirection={changeSortDirection}
-        changeMinFilterValue={changeMinFilterValue}
-        changeMaxFilterValue={changeMaxFilterValue}
+        changeGalleryOptions={changeGalleryOptions}
         filterMin={filterMin}
         filterMax={filterMax}
         sortDirection={sortDirection}
@@ -68,11 +53,7 @@ Gallery.propTypes = {
     })
   ).isRequired,
   deleteImage: PropTypes.func.isRequired,
-  changeFilterBy: PropTypes.func.isRequired,
-  changeSortBy: PropTypes.func.isRequired,
-  changeSortDirection: PropTypes.func.isRequired,
-  changeMinFilterValue: PropTypes.func.isRequired,
-  changeMaxFilterValue: PropTypes.func.isRequired,
+  changeGalleryOptions: PropTypes.func.isRequired,
   filterBy: PropTypes.string.isRequired,
   sortBy: PropTypes.string.isRequired,
   sortDirection: PropTypes.string.isRequired,
@@ -91,11 +72,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   deleteImage: id => dispatch(deleteImage(id)),
-  changeFilterBy: filterBy => dispatch(changeFilterBy(filterBy)),
-  changeSortBy: sortBy => dispatch(changeSortBy(sortBy)),
-  changeSortDirection: () => dispatch(changeSortDirection()),
-  changeMinFilterValue: filterMin => dispatch(changeMinFilterValue(filterMin)),
-  changeMaxFilterValue: filterMax => dispatch(changeMaxFilterValue(filterMax))
+  changeGalleryOptions: settings => dispatch(changeGalleryOptions(settings))
 });
 
 export default connect(

@@ -2,11 +2,7 @@ import generateUniqueHash from 'utils/generateUniqueHash';
 import {
   ADD_IMAGE,
   DELETE_IMAGE,
-  CHANGE_FILTER_BY,
-  CHANGE_SORT_BY,
-  CHANGE_SORT_DIRECTION,
-  CHANGE_MIN_FILTER_VALUE,
-  CHANGE_MAX_FILTER_VALUE
+  CHANGE_GALLERY_OPTIONS
 } from 'actions/galleryActions';
 
 export const initialState = {
@@ -20,61 +16,24 @@ export const initialState = {
 
 const galleryReducer = (state = initialState, action) => {
   if (action.type === ADD_IMAGE) {
-    const { borderSize, borderColor, color, height, width } = action;
+    const creationDate = Date.now();
     const id = generateUniqueHash();
     return {
       ...state,
-      rects: [
-        ...state.rects,
-        { id, borderSize, borderColor, color, height, width }
-      ]
+      rects: [...state.rects, { creationDate, id, ...action.payload }]
     };
   }
   if (action.type === DELETE_IMAGE) {
-    const { id } = action;
+    const { id } = action.payload;
     return {
       ...state,
       rects: [...state.rects.filter(image => image.id !== id)]
     };
   }
-  if (action.type === CHANGE_FILTER_BY) {
-    const { filterBy } = action;
+  if (action.type === CHANGE_GALLERY_OPTIONS) {
     return {
       ...state,
-      filterBy
-    };
-  }
-  if (action.type === CHANGE_SORT_BY) {
-    const { sortBy } = action;
-    return {
-      ...state,
-      sortBy
-    };
-  }
-  if (action.type === CHANGE_SORT_DIRECTION) {
-    let sortDirection;
-    if (state.sortDirection === 'DESC') {
-      sortDirection = 'ASC';
-    } else {
-      sortDirection = 'DESC';
-    }
-    return {
-      ...state,
-      sortDirection
-    };
-  }
-  if (action.type === CHANGE_MIN_FILTER_VALUE) {
-    const { filterMin } = action;
-    return {
-      ...state,
-      filterMin
-    };
-  }
-  if (action.type === CHANGE_MAX_FILTER_VALUE) {
-    const { filterMax } = action;
-    return {
-      ...state,
-      filterMax
+      ...action.payload
     };
   }
   return state;

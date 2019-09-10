@@ -1,11 +1,7 @@
 import {
   addImage,
   deleteImage,
-  changeFilterBy,
-  changeSortBy,
-  changeSortDirection,
-  changeMinFilterValue,
-  changeMaxFilterValue
+  changeGalleryOptions
 } from 'actions/galleryActions';
 import reducer, { initialState } from './galleryReducer';
 
@@ -47,29 +43,10 @@ describe('gallery reducer', () => {
     const deleteAction = deleteImage(newImageId);
     expect(reducer(stateWithImage, deleteAction).rects).toHaveLength(0);
   });
-  it('should handle CHANGE_FILTER_BY', () => {
-    const action = changeFilterBy('borderSize');
-    const expectedState = { ...initialState, filterBy: 'borderSize' };
-    expect(reducer(initialState, action)).toStrictEqual(expectedState);
-  });
-  it('should handle CHANGE_SORT_BY', () => {
-    const action = changeSortBy('borderSize');
-    const expectedState = { ...initialState, sortBy: 'borderSize' };
-    expect(reducer(initialState, action)).toStrictEqual(expectedState);
-  });
-  it('should handle CHANGE_SORT_DIRECTION', () => {
-    const action = changeSortDirection();
-    const expectedState = { ...initialState, sortDirection: 'ASC' };
-    expect(reducer(initialState, action)).toStrictEqual(expectedState);
-  });
-  it('should handle CHANGE_MIN_FILTER_VALUE', () => {
-    const action = changeMinFilterValue(412);
-    const expectedState = { ...initialState, filterMin: 412 };
-    expect(reducer(initialState, action)).toStrictEqual(expectedState);
-  });
-  it('should handle CHANGE_MAX_FILTER_VALUE', () => {
-    const action = changeMaxFilterValue(8134);
-    const expectedState = { ...initialState, filterMax: 8134 };
+  it('should handle CHANGE_GALLERY_OPTIONS', () => {
+    const newOptions = { filterMin: 17, sortBy: 'height' };
+    const action = changeGalleryOptions(newOptions);
+    const expectedState = { ...initialState, ...newOptions };
     expect(reducer(initialState, action)).toStrictEqual(expectedState);
   });
 });
