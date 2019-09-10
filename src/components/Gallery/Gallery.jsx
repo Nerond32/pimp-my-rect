@@ -20,8 +20,8 @@ const Gallery = ({
   const filteredRects = filterRectsBy(rects, filterBy, filterMin, filterMax);
   const sortedRects = sortRectsBy(filteredRects, sortBy, sortDirection);
   return (
-    <div className="gallery">
-      <h2>Your pimp&apos;d rects</h2>
+    <div className="app__gallery">
+      <h2 className="gallery__header">Your pimp&apos;d rects</h2>
       <GalleryOptions
         changeGalleryOptions={changeGalleryOptions}
         filterMin={filterMin}

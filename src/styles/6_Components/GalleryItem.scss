@@ -1,59 +1,59 @@
-.gallery-item-container {
+.item__container {
   border: 1px solid lighten($background-color, 10%);
   margin: 0.5em;
   padding: 1em;
   position: relative;
-  .delete-item-button {
-    position: absolute;
-    right: -1em;
-    top: -1em;
-  }
-  .rect-size-label {
+  .container__rect-size-label {
     position: absolute;
     left: 0;
     top: 0;
   }
-  .rect-container {
+  .container__rect {
     height: $gallery-rect-size;
     width: $gallery-rect-size;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  .container__delete-item-button {
+    position: absolute;
+    right: -1em;
+    top: -1em;
+  }
 }
 
-.gallery-item-transition-enter {
+.item__transition-enter {
   opacity: 0;
   transform: translateX(100%);
 }
-.gallery-item-transition-enter-active {
+.item__transition-enter-active {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 150ms, transform 150ms;
 }
-.gallery-item-transition-exit {
+.item__transition-exit {
   opacity: 1;
 }
-.gallery-item-transition-exit-active {
+.item__transition-exit-active {
   opacity: 0;
   transform: translateX(100%);
   transition: opacity 150ms, transform 150ms;
 }
 
 @media only screen and (min-width: $tablet-size) {
-  .gallery-item-transition-enter {
+  .item__transition-enter {
     opacity: 0;
     transform: translateY(-20%);
   }
-  .gallery-item-transition-enter-active {
+  .item__transition-enter-active {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 150ms, transform 150ms;
   }
-  .gallery-item-transition-exit {
+  .item__transition-exit {
     opacity: 1;
   }
-  .gallery-item-transition-exit-active {
+  .item__transition-exit-active {
     opacity: 0;
     transform: translateY(-20%);
     transition: opacity 150ms, transform 150ms;

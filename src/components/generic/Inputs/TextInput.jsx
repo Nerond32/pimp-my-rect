@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 
 const TextInput = ({ fullWidth, label, id, name, onChangeHandler, value }) => {
   return (
-    <div className={`text-input ${fullWidth ? 'text-input-full-width' : ''}`}>
-      {label && <label htmlFor={name}>{label}</label>}
+    <div
+      className={`pmr-text-input ${fullWidth ? 'text-input-full-width' : ''}`}
+    >
+      {label && (
+        <label className="pmr-text-input__label" htmlFor={name}>
+          {label}
+        </label>
+      )}
       <input
+        className="pmr-text-input__input"
         type="text"
         id={id}
         name={name}

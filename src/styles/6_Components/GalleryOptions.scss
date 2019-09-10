@@ -1,22 +1,22 @@
-.gallery-options-form {
+.gallery__options-form {
   @include center-content;
   flex-direction: column;
-  .filter,
-  .filter-inputs,
-  .sort {
+  .options-form__filter,
+  .options-form__filter-inputs,
+  .options-form__sort {
     align-self: flex-start;
     margin: 0.6em 0 0 0;
   }
 
   @media only screen and (min-width: $tablet-size) {
     display: inline-block;
-    .filter,
-    .filter-inputs,
-    .sort {
+    .options-form__filter,
+    .options-form__filter-inputs,
+    .options-form__sort {
       display: inline-block;
       margin-left: 1em;
     }
-    .sort {
+    .options-form__sort {
       .pmr-button {
         width: 4.5em;
       }

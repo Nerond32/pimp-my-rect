@@ -35,12 +35,12 @@ describe('gallery', () => {
   it('renders correct amount of rectangles', () => {
     const gallery3 = shallow(<GalleryContainer rects={rects3} {...props} />);
     const gallery7 = shallow(<GalleryContainer rects={rects7} {...props} />);
-    expect(gallery3.find('.gallery-item')).toHaveLength(3);
-    expect(gallery7.find('.gallery-item')).toHaveLength(7);
+    expect(gallery3.find('.container__item')).toHaveLength(3);
+    expect(gallery7.find('.container__item')).toHaveLength(7);
   });
   it('renders correctly with empty array of rectangles', () => {
     const gallery0 = shallow(<GalleryContainer rects={[]} {...props} />);
-    expect(gallery0.find('.gallery-item')).toHaveLength(0);
+    expect(gallery0.find('.container__item')).toHaveLength(0);
   });
   it('renders with filtered out rectangles', () => {
     const galleryFiltered3 = shallow(
@@ -65,7 +65,7 @@ describe('gallery', () => {
         sortDirection="DESC"
       />
     );
-    expect(galleryFiltered3.find('.gallery-item')).toHaveLength(2);
-    expect(galleryFiltered7.find('.gallery-item')).toHaveLength(4);
+    expect(galleryFiltered3.find('.container__item')).toHaveLength(2);
+    expect(galleryFiltered7.find('.container__item')).toHaveLength(4);
   });
 });

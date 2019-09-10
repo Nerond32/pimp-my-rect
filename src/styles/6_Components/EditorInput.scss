@@ -1,13 +1,13 @@
-.editor-input-form {
+.input__form {
   position: relative;
-  .save-button {
+  .form__save-button {
     position: absolute;
     top: 0;
     right: 0;
   }
   @media only screen and (min-width: $tablet-size) {
     position: static;
-    .save-button {
+    .form__save-button {
       position: static;
       top: auto;
       right: auto;

@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 const ColorInput = ({ displayName, name, value, onChangeHandler }) => {
   return (
-    <div className="input">
-      <label htmlFor={name}>{displayName}</label>
-      <div className="input-field">
+    <div className="pmr-input">
+      <label className="pmr-input__label" htmlFor={name}>
+        {displayName}
+      </label>
+      <div className="pmr-input__field">
         <input
           type="color"
           id={name}

@@ -19,8 +19,8 @@ const GalleryOptions = ({
   const updateNumericField = ({ target: { name, value } }) =>
     changeGalleryOptions({ [name]: Number(value) });
   return (
-    <form className="gallery-options-form">
-      <div className="sort">
+    <form className="gallery__options-form">
+      <div className="options-form__sort">
         Sort by{' '}
         <select defaultValue="size" name="sortBy" onChange={updateField}>
           {sortingOptions.map(option => {
@@ -33,7 +33,7 @@ const GalleryOptions = ({
         </select>
         <Button onClick={changeSortDirection}>{sortDirection}</Button>
       </div>
-      <div className="filter">
+      <div className="options-form__filter">
         Filter by{' '}
         <select
           defaultValue="filterBy"
@@ -49,7 +49,7 @@ const GalleryOptions = ({
           })}
         </select>
       </div>
-      <div className="filter-inputs">
+      <div className="options-form__filter-inputs">
         <TextInput
           id="filterMin"
           name="filterMin"

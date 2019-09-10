@@ -1,9 +1,9 @@
-.input {
+.pmr-input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-top: 0.5em;
-  .input-field {
+  .pmr-input__field {
     input {
       vertical-align: middle;
     }
@@ -18,18 +18,18 @@
   }
 }
 
-.text-input {
+.pmr-text-input {
   display: inline-block;
   margin: 1.5em;
   position: relative;
-  label {
+  .pmr-text-input__label {
     color: $font-color-light;
     font-size: 0.8em;
     position: absolute;
     left: 0.1em;
     top: -1.2em;
   }
-  input {
+  .pmr-text-input__input {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid $font-color-light;

@@ -1,4 +1,4 @@
-@mixin smallMobileLayout {
+@mixin small-mobile-layout {
   grid-template-areas:
     'header'
     '.'
@@ -9,7 +9,7 @@
     'gallery';
 }
 
-@mixin largeMobileLayout {
+@mixin large-mobile-layout {
   grid-template-areas:
     'input . header'
     'input . .'
@@ -18,7 +18,7 @@
     'gallery gallery gallery';
 }
 
-@mixin desktopLayout {
+@mixin desktop-layout {
   grid-template-areas:
     'header . gallery'
     '. . gallery'
