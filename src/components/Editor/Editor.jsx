@@ -3,13 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Rectangle from 'components/generic/Rectangle/Rectangle';
 import { addImage } from 'actions/galleryActions';
-import {
-  changeBorderSize,
-  changeBorderColor,
-  changeColor,
-  changeHeight,
-  changeWidth
-} from 'actions/editorActions';
+import { updateRect } from 'actions/editorActions';
 import './Editor.scss';
 
 import Input from './Input/Input';
@@ -21,11 +15,7 @@ const Editor = ({
   height,
   width,
   addImage,
-  changeBorderSize,
-  changeBorderColor,
-  changeColor,
-  changeHeight,
-  changeWidth
+  updateRect
 }) => {
   return (
     <>
@@ -37,11 +27,7 @@ const Editor = ({
           height={height}
           width={width}
           addImage={addImage}
-          changeBorderSize={changeBorderSize}
-          changeBorderColor={changeBorderColor}
-          changeColor={changeColor}
-          changeHeight={changeHeight}
-          changeWidth={changeWidth}
+          updateRect={updateRect}
         />
       </div>
       <div className="editor editor-preview">
@@ -64,11 +50,7 @@ Editor.propTypes = {
   height: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
   addImage: PropTypes.func.isRequired,
-  changeBorderSize: PropTypes.func.isRequired,
-  changeBorderColor: PropTypes.func.isRequired,
-  changeColor: PropTypes.func.isRequired,
-  changeHeight: PropTypes.func.isRequired,
-  changeWidth: PropTypes.func.isRequired
+  updateRect: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -82,11 +64,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   addImage: (borderSize, borderColor, color, height, width) =>
     dispatch(addImage(borderSize, borderColor, color, height, width)),
-  changeBorderSize: borderSize => dispatch(changeBorderSize(borderSize)),
-  changeBorderColor: borderColor => dispatch(changeBorderColor(borderColor)),
-  changeColor: color => dispatch(changeColor(color)),
-  changeHeight: height => dispatch(changeHeight(height)),
-  changeWidth: width => dispatch(changeWidth(width))
+  updateRect: attributes => dispatch(updateRect(attributes))
 });
 
 export default connect(

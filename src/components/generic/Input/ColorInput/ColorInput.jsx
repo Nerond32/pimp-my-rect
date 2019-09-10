@@ -12,7 +12,7 @@ const ColorInput = ({ displayName, name, value, onChangeHandler }) => {
           id={name}
           name={name}
           value={value}
-          onChange={event => onChangeHandler(event.target.value)}
+          onChange={event => onChangeHandler(event)}
         />
         <span>{value}</span>
       </div>

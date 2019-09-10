@@ -23,12 +23,12 @@ const Input = ({
   height,
   width,
   addImage,
-  changeBorderSize,
-  changeBorderColor,
-  changeColor,
-  changeHeight,
-  changeWidth
+  updateRect
 }) => {
+  const updateField = ({ target: { name, value } }) =>
+    updateRect({ [name]: value });
+  const updateNumericField = ({ target: { name, value } }) =>
+    updateRect({ [name]: Number(value) });
   return (
     <form
       className="editor-input-form"
@@ -41,40 +41,40 @@ const Input = ({
         displayName="Border color:"
         name="borderColor"
         value={borderColor}
-        onChangeHandler={changeBorderColor}
+        onChangeHandler={updateField}
       />
       <ColorInput
         displayName="Color:"
         name="color"
         value={color}
-        onChangeHandler={changeColor}
+        onChangeHandler={updateField}
       />
       <RangeInput
         min={minHeight}
         max={maxHeight}
         step={stepHeight}
         displayName="Height:"
-        name="rectHeight"
+        name="height"
         value={height}
-        onChangeHandler={changeHeight}
+        onChangeHandler={updateNumericField}
       />
       <RangeInput
         min={minWidth}
         max={maxWidth}
         step={stepWidth}
         displayName="Width:"
-        name="rectWidth"
+        name="width"
         value={width}
-        onChangeHandler={changeWidth}
+        onChangeHandler={updateNumericField}
       />
       <RangeInput
         min={minBorderSize}
         max={maxBorderSize}
         step={borderStep}
         displayName="Border size:"
-        name="rectBorder"
+        name="borderSize"
         value={borderSize}
-        onChangeHandler={changeBorderSize}
+        onChangeHandler={updateNumericField}
       />
       <Button classNames="save-button" type="submit">
         Save
@@ -90,11 +90,7 @@ Input.propTypes = {
   height: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
   addImage: PropTypes.func.isRequired,
-  changeBorderSize: PropTypes.func.isRequired,
-  changeBorderColor: PropTypes.func.isRequired,
-  changeColor: PropTypes.func.isRequired,
-  changeHeight: PropTypes.func.isRequired,
-  changeWidth: PropTypes.func.isRequired
+  updateRect: PropTypes.func.isRequired
 };
 
 export default memo(Input);

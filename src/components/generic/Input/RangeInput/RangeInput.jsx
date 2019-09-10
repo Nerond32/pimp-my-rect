@@ -23,7 +23,7 @@ const RangeInput = ({
           max={max}
           step={step}
           value={value}
-          onChange={event => onChangeHandler(Number(event.target.value))}
+          onChange={event => onChangeHandler(event)}
         />
         <span>{value}</span>
       </div>

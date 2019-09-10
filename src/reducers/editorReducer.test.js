@@ -1,10 +1,4 @@
-import {
-  changeBorderSize,
-  changeBorderColor,
-  changeColor,
-  changeHeight,
-  changeWidth
-} from 'actions/editorActions';
+import { updateRect } from 'actions/editorActions';
 import reducer, { initialState } from './editorReducer';
 
 describe('editor reducer', () => {
@@ -14,29 +8,16 @@ describe('editor reducer', () => {
     };
     expect(reducer(undefined, invalidAction)).toStrictEqual(initialState);
   });
-  it('should handle CHANGE_BORDER_SIZE', () => {
-    const action = changeBorderSize(207);
-    const expectedState = { ...initialState, borderSize: 207 };
-    expect(reducer(initialState, action)).toStrictEqual(expectedState);
-  });
-  it('should handle CHANGE_BORDER_COLOR', () => {
-    const action = changeBorderColor('#ff2300');
-    const expectedState = { ...initialState, borderColor: '#ff2300' };
-    expect(reducer(initialState, action)).toStrictEqual(expectedState);
-  });
-  it('should handle CHANGE_COLOR', () => {
-    const action = changeColor('#ff2300');
-    const expectedState = { ...initialState, color: '#ff2300' };
-    expect(reducer(initialState, action)).toStrictEqual(expectedState);
-  });
-  it('should handle CHANGE_HEIGHT', () => {
-    const action = changeHeight(1111);
-    const expectedState = { ...initialState, height: 1111 };
-    expect(reducer(initialState, action)).toStrictEqual(expectedState);
-  });
-  it('should handle CHANGE_WIDTH', () => {
-    const action = changeWidth(702);
-    const expectedState = { ...initialState, width: 702 };
+  it('should handle UPDATE_RECT', () => {
+    const updatedRect = {
+      borderSize: 207,
+      borderColor: '#ff2300',
+      color: '#ff2300',
+      height: 1111,
+      width: 702
+    };
+    const action = updateRect({ ...updatedRect });
+    const expectedState = { ...updatedRect };
     expect(reducer(initialState, action)).toStrictEqual(expectedState);
   });
 });
