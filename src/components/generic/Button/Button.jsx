@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Button.scss';
-
 const Button = ({ children, classNames, withBorder, onClick, type }) => {
   return (
     // eslint-disable-next-line react/button-has-type

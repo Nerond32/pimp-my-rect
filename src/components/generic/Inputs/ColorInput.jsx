@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import '../Input.scss';
 
 const ColorInput = ({ displayName, name, value, onChangeHandler }) => {
   return (

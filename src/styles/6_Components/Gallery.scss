@@ -1,17 +1,14 @@
-@import 'assets/mixins.scss';
-@import 'assets/variables.scss';
-
 .gallery {
   overflow-y: auto;
   h2 {
-    border-bottom: 2px solid $primary;
+    border-bottom: 2px solid $primary-color;
     border-bottom-left-radius: 20%;
     display: inline-block;
     font-size: 1.2em;
     margin: 1em;
     padding: 0.4em;
   }
-  @media only screen and (max-width: $tabletSize) {
+  @media only screen and (max-width: $tablet-size) {
     overflow-y: visible;
     @include center-vertically;
     flex-wrap: wrap;

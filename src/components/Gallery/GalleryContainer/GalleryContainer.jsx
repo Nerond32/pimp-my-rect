@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import filterRectsBy from 'utils/filterRectsBy';
 import sortRectsBy from 'utils/sortRectsBy';
 import GalleryItem from './GalleryItem/GalleryItem';
-import './GalleryContainer.scss';
 
 export const GalleryContainer = ({
   rects,

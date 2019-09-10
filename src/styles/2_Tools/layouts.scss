@@ -1,0 +1,28 @@
+@mixin smallMobileLayout {
+  grid-template-areas:
+    'header'
+    '.'
+    'output'
+    '.'
+    'input'
+    '.'
+    'gallery';
+}
+
+@mixin largeMobileLayout {
+  grid-template-areas:
+    'input . header'
+    'input . .'
+    'input . output'
+    '. . .'
+    'gallery gallery gallery';
+}
+
+@mixin desktopLayout {
+  grid-template-areas:
+    'header . gallery'
+    '. . gallery'
+    'output . gallery'
+    '. . gallery'
+    'input . gallery';
+}

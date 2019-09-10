@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './TextInput.scss';
 
 const TextInput = ({ fullWidth, label, id, name, onChangeHandler, value }) => {
   return (

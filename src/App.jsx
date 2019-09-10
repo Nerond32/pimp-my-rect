@@ -5,7 +5,6 @@ import { store, persistor } from 'store/store';
 import Header from 'components/Header/Header';
 import Editor from 'components/Editor/Editor';
 import Gallery from 'components/Gallery/Gallery';
-import './App.scss';
 
 const App = () => {
   return (

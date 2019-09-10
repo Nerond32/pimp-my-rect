@@ -1,0 +1,35 @@
+.app {
+  background-color: $background-color;
+  color: $font-color;
+  font-family: 'Verdana';
+}
+
+.app {
+  .editor-input {
+    grid-area: input;
+  }
+  .editor-preview {
+    grid-area: output;
+  }
+  .gallery {
+    grid-area: gallery;
+  }
+  .pmr-main-header {
+    grid-area: header;
+  }
+  display: grid;
+  grid: 4em 1em 1fr 1em 1fr / minmax($editor-width, 1fr) 1em 2fr;
+  @include desktopLayout;
+  @media only screen and (max-width: $mobile-size) {
+    grid: 4em 1em 1fr 1em 1fr 1em 1fr / 1fr;
+    @include smallMobileLayout;
+  }
+  @media only screen and (min-width: $min-landscape-width) and (max-width: $tablet-size) and (orientation: landscape) {
+    grid: 4em 1em minmax(calc(100vh - 6em), 1fr) 1em 1fr / 1fr 1em 1fr;
+    @include largeMobileLayout;
+  }
+  @media only screen and (min-width: $min-landscape-width) and (max-width: $tablet-size) and (orientation: portrait) {
+    grid: 4em 1em 1fr 1em 1fr / 1fr 1em 1fr;
+    @include largeMobileLayout;
+  }
+}

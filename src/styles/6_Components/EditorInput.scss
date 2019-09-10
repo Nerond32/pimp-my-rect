@@ -1,6 +1,4 @@
-@import 'assets/variables.scss';
-
-@media only screen and (max-width: $mobileSize) {
+@media only screen and (max-width: $mobile-size) {
   .editor-input-form {
     position: relative;
     .save-button {

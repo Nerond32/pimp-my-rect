@@ -1,0 +1,17 @@
+button.pmr-button {
+  background: $primary-color;
+  border: none;
+  border-radius: 2px;
+  color: $font-color;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0.6em;
+  padding: 0.8em;
+  transition-duration: 0.2s;
+  svg {
+    color: $font-color;
+  }
+  &.button-with-border {
+    border: 1px solid $secondary-color;
+  }
+}

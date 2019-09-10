@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
 import Button from 'components/generic/Button/Button';
 import Rectangle from 'components/generic/Rectangle/Rectangle';
-import './GalleryItem.scss';
 
 export const GalleryItem = ({ rect, deleteImage }) => {
   const { id, borderSize, borderColor, color, height, width } = rect;

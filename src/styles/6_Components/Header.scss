@@ -1,8 +1,5 @@
-@import 'assets/mixins.scss';
-@import 'assets/variables.scss';
-
 .pmr-main-header {
-  background-color: lighten($background, 10%);
+  background-color: lighten($background-color, 10%);
   @include center-content;
   .pmr-main-header-text {
     h1 {
@@ -11,14 +8,14 @@
       margin: 2px;
     }
     h2 {
-      color: $fontColorLight;
+      color: $font-color-light;
       font-size: 0.7rem;
       margin: 2px;
       font-weight: 400;
       text-align: right;
     }
   }
-  @media only screen and (max-width: $mobileSize) {
+  @media only screen and (max-width: $mobile-size) {
     margin: 0 auto;
     padding: 0.5em 0 0 0;
     width: 100%;

@@ -12,9 +12,8 @@ import {
   borderStep
 } from 'assets/constants';
 import Button from 'components/generic/Button/Button';
-import ColorInput from 'components/generic/Input/ColorInput/ColorInput';
-import RangeInput from 'components/generic/Input/RangeInput/RangeInput';
-import './Input.scss';
+import ColorInput from 'components/generic/Inputs/ColorInput';
+import RangeInput from 'components/generic/Inputs/RangeInput';
 
 const Input = ({
   borderSize,

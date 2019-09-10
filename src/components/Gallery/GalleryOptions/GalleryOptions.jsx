@@ -2,8 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { filteringOptions, sortingOptions } from 'assets/constants';
 import Button from 'components/generic/Button/Button';
-import TextInput from 'components/generic/Input/TextInput/TextInput';
-import './GalleryOptions.scss';
+import TextInput from 'components/generic/Inputs/TextInput';
 
 const GalleryOptions = ({
   changeGalleryOptions,

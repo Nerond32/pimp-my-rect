@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Rectangle from 'components/generic/Rectangle/Rectangle';
 import { addImage } from 'actions/galleryActions';
 import { updateRect } from 'actions/editorActions';
-import './Editor.scss';
 
 import Input from './Input/Input';
 

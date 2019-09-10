@@ -1,0 +1,39 @@
+.input {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
+  .input-field {
+    input {
+      vertical-align: middle;
+    }
+    span {
+      display: inline-block;
+      margin-left: 0.8em;
+      min-width: 4.5em;
+    }
+  }
+  @media only screen and (max-width: $mobile-size) {
+    flex-direction: column;
+  }
+}
+.text-input {
+  display: inline-block;
+  margin: 1.5em;
+  position: relative;
+  label {
+    color: $font-color-light;
+    font-size: 0.8em;
+    position: absolute;
+    left: 0.1em;
+    top: -1.2em;
+  }
+  input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $font-color-light;
+    color: $font-color-light;
+    flex: 1;
+    height: 100%;
+    width: 70px;
+  }
+}

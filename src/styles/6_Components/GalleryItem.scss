@@ -1,7 +1,5 @@
-@import 'assets/variables.scss';
-
 .gallery-item-container {
-  border: 1px solid lighten($background, 10%);
+  border: 1px solid lighten($background-color, 10%);
   margin: 0.5em;
   padding: 1em;
   position: relative;
@@ -16,8 +14,8 @@
     top: 0;
   }
   .rect-container {
-    height: $galleryRectSize;
-    width: $galleryRectSize;
+    height: $gallery-rect-size;
+    width: $gallery-rect-size;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +40,7 @@
   transition: opacity 150ms, transform 150ms;
 }
 
-@media only screen and (max-width: $mobileSize) {
+@media only screen and (max-width: $mobile-size) {
   .gallery-item-transition-enter {
     opacity: 0;
     transform: translateX(100%);

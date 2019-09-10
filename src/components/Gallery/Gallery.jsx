@@ -6,7 +6,6 @@ import filterRectsBy from 'utils/filterRectsBy';
 import sortRectsBy from 'utils/sortRectsBy';
 import GalleryContainer from './GalleryContainer/GalleryContainer';
 import GalleryOptions from './GalleryOptions/GalleryOptions';
-import './Gallery.scss';
 
 const Gallery = ({
   rects,
