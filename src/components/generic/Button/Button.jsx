@@ -5,8 +5,8 @@ const Button = ({ children, classNames, withBorder, onClick, type }) => {
   return (
     // eslint-disable-next-line react/button-has-type
     <button
-      className={`pmr-button ${classNames} ${
-        withBorder ? 'button-with-border' : ''
+      className={`c-button ${classNames} ${
+        withBorder ? 'c-button--with-border' : ''
       }`}
       type={type}
       onClick={onClick}

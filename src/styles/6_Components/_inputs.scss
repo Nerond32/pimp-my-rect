@@ -1,35 +1,38 @@
-.pmr-input {
+.c-color-input,
+.c-range-input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-top: 0.5em;
-  .pmr-input__field {
-    input {
-      vertical-align: middle;
-    }
-    span {
-      display: inline-block;
-      margin-left: 0.8em;
-      min-width: 4.5em;
-    }
-  }
   @media only screen and (min-width: $tablet-size) {
     flex-direction: row;
   }
 }
 
-.pmr-text-input {
+.c-color-input__field,
+.c-range-input__field {
+  input {
+    vertical-align: middle;
+  }
+  span {
+    display: inline-block;
+    margin-left: 0.8em;
+    min-width: 4.5em;
+  }
+}
+
+.c-text-input {
   display: inline-block;
   margin: 1.5em;
   position: relative;
-  .pmr-text-input__label {
+  .c-text-input__label {
     color: $font-color-light;
     font-size: 0.8em;
     position: absolute;
     left: 0.1em;
     top: -1.2em;
   }
-  .pmr-text-input__input {
+  .c-text-input__input {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid $font-color-light;

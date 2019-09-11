@@ -1,0 +1,20 @@
+.c-editor-input {
+  position: relative;
+}
+
+.c-editor-input__button-save {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media only screen and (min-width: $tablet-size) {
+  .c-editor-input {
+    position: static;
+  }
+  .c-editor-input__button-save {
+    position: static;
+    top: auto;
+    right: auto;
+  }
+}

@@ -1,0 +1,28 @@
+.c-gallery-options {
+  @include center-content;
+  flex-direction: column;
+}
+
+.c-gallery-options__filter-by,
+.c-gallery-options__filter-inputs,
+.c-gallery-options__sort-by {
+  align-self: flex-start;
+  margin: 0.6em 0 0 0;
+}
+
+@media only screen and (min-width: $tablet-size) {
+  .c-gallery-options {
+    display: inline-block;
+  }
+  .c-gallery-options__filter-by,
+  .c-gallery-options__filter-inputs,
+  .c-gallery-options__sort-by {
+    display: inline-block;
+    margin-left: 1em;
+  }
+  .c-gallery-options__sort-by {
+    .pmr-button {
+      width: 4.5em;
+    }
+  }
+}

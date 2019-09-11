@@ -30,7 +30,7 @@ const Input = ({
     updateRect({ [name]: Number(value) });
   return (
     <form
-      className="input__form"
+      className="c-editor-input"
       onSubmit={event => {
         event.preventDefault();
         addImage({ borderSize, borderColor, color, height, width });
@@ -75,7 +75,7 @@ const Input = ({
         value={borderSize}
         onChangeHandler={updateNumericField}
       />
-      <Button classNames="form__save-button" type="submit">
+      <Button classNames="c-editor-input__button-save" type="submit">
         Save
       </Button>
     </form>

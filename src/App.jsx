@@ -8,7 +8,7 @@ import Gallery from 'components/Gallery/Gallery';
 
 const App = () => {
   return (
-    <div className="app">
+    <div className="c-app">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Header />

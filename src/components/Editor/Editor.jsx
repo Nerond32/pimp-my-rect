@@ -5,7 +5,7 @@ import Rectangle from 'components/generic/Rectangle/Rectangle';
 import { addImage } from 'actions/galleryActions';
 import { updateRect } from 'actions/editorActions';
 
-import Input from './Input/Input';
+import Input from './EditorInput/EditorInput';
 
 const Editor = ({
   borderSize,
@@ -18,7 +18,7 @@ const Editor = ({
 }) => {
   return (
     <>
-      <div className="app__editor app__editor-input">
+      <div className="c-editor c-editor--input">
         <Input
           borderSize={borderSize}
           borderColor={borderColor}
@@ -29,7 +29,7 @@ const Editor = ({
           updateRect={updateRect}
         />
       </div>
-      <div className="app__editor app__editor-preview">
+      <div className="c-editor c-editor--preview">
         <Rectangle
           borderSize={borderSize}
           borderColor={borderColor}

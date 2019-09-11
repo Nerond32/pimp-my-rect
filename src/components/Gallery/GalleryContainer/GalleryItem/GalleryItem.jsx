@@ -14,13 +14,13 @@ export const GalleryItem = ({ rect, deleteImage }) => {
     <CSSTransition
       in={isBeingDeleted}
       timeout={300}
-      classNames="item__transition"
+      classNames="c-gallery-item"
     >
-      <div className="item__container">
-        <span className="container__rect-size-label">
+      <div className="c-gallery-item__container">
+        <span className="c-gallery-item__size--label">
           {2 * borderSize + width}x{2 * borderSize + height}
         </span>
-        <div className="container__rect">
+        <div className="c-gallery-item__rect">
           <Rectangle
             borderSize={borderSize}
             borderColor={borderColor}
@@ -30,7 +30,7 @@ export const GalleryItem = ({ rect, deleteImage }) => {
           />{' '}
         </div>
         <Button
-          classNames="container__delete-item-button"
+          classNames="c-gallery-item__button-delete"
           onClick={() => {
             setIsBeingDeleted(false);
             setTimeout(() => {

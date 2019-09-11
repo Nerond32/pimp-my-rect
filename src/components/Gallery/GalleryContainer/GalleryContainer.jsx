@@ -16,10 +16,10 @@ export const GalleryContainer = ({
   const filteredRects = filterRectsBy(rects, filterBy, filterMin, filterMax);
   const sortedRects = sortRectsBy(filteredRects, sortBy, sortDirection);
   return (
-    <div className="gallery__container">
+    <div className="c-gallery-container">
       {sortedRects.map(rect => {
         return (
-          <div className="container__item" key={rect.id}>
+          <div className="c-gallery-container__item" key={rect.id}>
             <GalleryItem rect={rect} deleteImage={deleteImage} />
           </div>
         );

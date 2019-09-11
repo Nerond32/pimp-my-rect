@@ -11,11 +11,11 @@ const RangeInput = ({
   onChangeHandler
 }) => {
   return (
-    <div className="pmr-input">
-      <label className="pmr-input__label" htmlFor={name}>
+    <div className="c-range-input">
+      <label className="c-range-input__label" htmlFor={name}>
         {displayName}
       </label>
-      <div className="pmr-input__field">
+      <div className="c-range-input__field">
         <input
           type="range"
           id={name}

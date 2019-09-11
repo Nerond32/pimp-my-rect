@@ -1,0 +1,8 @@
+.c-editor {
+  @include center-content;
+}
+
+.c-editor--preview {
+  min-height: $gallery-rect-size;
+  min-width: $gallery-rect-size;
+}
